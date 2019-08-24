@@ -278,9 +278,9 @@
 
 /*2019.8.13新增*/
 .toutiao-cell{
-	padding: 1.5rem 1.5rem 1rem;
+	padding:.4rem .4rem .267rem;
 	background: #fff;
-	margin: 0 0 1rem
+	margin: 0 0 .267rem
 }
 
 .toutiao-cell .pic-ul{overflow: hidden;}
@@ -307,20 +307,20 @@
 
 .toutiao-cell .pic-ul li .more {
     display: block;
-    padding: 0 .8rem;
+    padding: 0 .213rem;
     background:#bfbfbf;
     color: #fff;
-    font-size: 1.2rem;
+    font-size: .32rem;
     position: absolute;
-    bottom: 1rem;
-    right: 1rem;
-	height: 1.9rem;
-	line-height: 1.9rem;
-	border-radius:.9rem;
+    bottom: .267rem;
+    right: .267rem;
+	height: .5rem;
+	line-height: .5rem;
+	border-radius:.24rem;
 }
 
 .toutiao-cell .bottom{
-	margin: 1.5rem 0 0;
+	margin:.4rem 0 0;
 	display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -332,7 +332,7 @@
 }
 
 .toutiao-cell .title{
-	font-size: 1.6rem;
+	font-size: .426rem;
 	line-height: 1.5;
 	font-weight: bold
 }
@@ -340,8 +340,8 @@
 .toutiao-cell .play-bt{
 	display: block;
 	position:absolute;
-	width: 6rem;
-	height: 6rem;
+	width: 1.6rem;
+	height: 1.6rem;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%)
@@ -358,16 +358,16 @@
 .toutiao-cell .video-all{
 	background: #787878;
 	padding:57.3% 0 0;
-	margin: 1rem 0 0;
+	margin: .267rem 0 0;
 }
 
-.toutiao-cell .zhiding,.toutiao-cell .jinghua,.toutiao-cell .tuijian{
-	padding: 0 .5rem;
-	height: 1.8rem;
-	line-height:1.8rem;
+.toutiao-cell .zhiding,.toutiao-cell .jinghua,.toutiao-cell .tuijian,.toutiao-cell .remen{
+	padding: 0 .133rem;
+	height: .48rem;
+	line-height:.48rem;
 	border-radius:2px;
 	background: linear-gradient(to right,#FF667F,#FF042E);
-	font-size: 1.3rem;
+	font-size: .346rem;
 	color: #fff;
 }
 
@@ -379,24 +379,29 @@
 	background: linear-gradient(to right,#65BFFF,#0798FF);
 }
 
+.toutiao-cell .remen{
+	background: linear-gradient(to right,#FF8F38,#FF4D0F);
+}
+
+
 .toutiao-cell .title .f02{
 	color:#888;
 	font-weight: normal;
-	margin: .8rem 0 0;}
+	margin: .213rem 0 0;}
 
 .toutiao-cell .bankuai{
-	font-size: 1.3rem;
+	font-size: .346rem;
 	color:#0096FF;
 	position:relative;
-	height: 1.8rem;
-	line-height: 1.8rem;
-	padding: 0 .5rem;
-	max-width:100px;
+	height: .48rem;
+	line-height: .48rem;
+	padding: 0 .133rem;
+	max-width:2.6rem;
 }
 
 .toutiao-cell .watch,.toutiao-cell .date{
-	margin: 0 0 0 1rem;
-	font-size:1.3rem;
+	margin: 0 0 0 .267rem;
+	font-size:.346rem;
 	color: #888
 }
 
@@ -415,15 +420,15 @@
     box-sizing: border-box;
     border-radius: 4px;}
 
-.big-reward-bt.active{background-position:-6.2rem -16.7rem;}
+.big-reward-bt.active{background-position:-1.65rem -4.45rem;}
 
 .big-post-bt{
-	width: 4.8rem;
-    height: 4.8rem;
-    margin: 0 auto .6rem;
-	background-position:-6.2rem -11.9rem;}
+	width: 1.28rem;
+    height: 1.28rem;
+    margin: 0 auto .16rem;
+	background-position:-1.65rem -3.17rem;}
 
-.reward-head{margin:2rem 0 0;}
+.reward-head{margin:.533rem 0 0;}
 
 .reward-head.top-line:before {
     content: " ";
@@ -438,4 +443,4 @@
     -webkit-transform: scaleY(0.5);
     transform: scaleY(0.5);}
 
-.reward-people{color:#888;margin:1.2rem 0 0;}
+.reward-people{color:#888;margin:.32rem 0 0;}

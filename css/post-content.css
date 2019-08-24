@@ -394,7 +394,7 @@
 	margin: 1rem 0 0;
 }
 
-.toutiao-cell .zhiding,.toutiao-cell .jinghua,.toutiao-cell .tuijian{
+.toutiao-cell .zhiding,.toutiao-cell .jinghua,.toutiao-cell .tuijian,.toutiao-cell .remen{
 	padding: 0 .5rem;
 	height: 1.8rem;
 	line-height:1.8rem;
@@ -411,6 +411,11 @@
 .toutiao-cell .tuijian{
 	background: linear-gradient(to right,#65BFFF,#0798FF);
 }
+
+.toutiao-cell .remen{
+	background: linear-gradient(to right,#FF8F38,#FF4D0F);
+}
+
 
 .toutiao-cell .title .f02{
 	color:#888;
