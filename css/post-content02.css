@@ -277,11 +277,6 @@
 
 
 /*2019.8.13新增*/
-.toutiao-cell{
-	padding:.4rem .4rem .267rem;
-	background: #fff;
-	margin: 0 0 .267rem
-}
 
 .toutiao-cell .pic-ul{overflow: hidden;}
 
@@ -369,6 +364,7 @@
 	background: linear-gradient(to right,#FF667F,#FF042E);
 	font-size: .346rem;
 	color: #fff;
+	margin: 0 .267rem 0 0;
 }
 
 .toutiao-cell .jinghua{
@@ -400,7 +396,7 @@
 }
 
 .toutiao-cell .watch,.toutiao-cell .date{
-	margin: 0 0 0 .267rem;
+	margin: 0 .267rem 0 0;
 	font-size:.346rem;
 	color: #888
 }
