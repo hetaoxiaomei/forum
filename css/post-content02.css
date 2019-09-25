@@ -1,5 +1,5 @@
 
-.post-content-top .icon-vip,.post-content-top .icon-manage,.icon-authentication,.post-content-top .icon-call,
+.icon-delete,#suspension-search .arrow,.post-content-top .icon-vip,.post-content-top .icon-manage,.icon-authentication,.post-content-top .icon-call,
 .post-content-top .icon-weixin-kefu,.post-content-top .icon-more,.post-label li,.icon-manage02,.big-share-bt,.function-bt .icon-poster-location,
 .icon-poster-more,.icon-poster-save,.big-reward-bt,.big-reward-bt{
 	background-image: url(../img/post-pic02.png);
@@ -277,6 +277,9 @@
 
 
 /*2019.8.13新增*/
+.toutiao-cell{
+	padding-top:.4rem;
+}
 
 .toutiao-cell .pic-ul{overflow: hidden;}
 
@@ -440,3 +443,90 @@
     transform: scaleY(0.5);}
 
 .reward-people{color:#888;margin:.32rem 0 0;}
+
+/*2019.9.23*/
+#suspension-search{
+	padding: .267rem 0;
+	background: #fff;
+	box-sizing: border-box;
+	display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+}
+
+#suspension-search .arrow-all{padding: 0 .4rem;}
+
+#suspension-search .arrow{
+	width: .293rem;
+	height: .48rem;
+	display: block;
+	background-position: 0 0;
+
+}
+
+#suspension-search .left{position: relative;}
+
+#suspension-search input{
+	padding: 0 .4rem;
+	width: 100%;
+	height: .93rem;
+	background-color: #F5F6F7;
+	cursor:pointer;
+	border-radius:.48rem;
+	color: #333;
+	font-size: .373rem;
+	box-sizing: border-box;
+}
+
+#suspension-search .bt{
+	line-height: .933rem;
+	height: .933rem;
+	padding: 0 .533rem;
+	text-align: center;
+	cursor:pointer;
+	color: #0096FF;
+	display: block;
+	font-size: .373rem;
+}
+
+.search-record-ul{
+	padding: 0 .267rem .267rem .133rem;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+.search-record-ul li{
+	display: block;
+	padding:0 .32rem;
+	font-size:.346rem;
+	margin: .267rem 0 0 .267rem;
+	background: #F3F3F3;
+	height: .67rem;
+	line-height: .67rem;
+	border-radius:.34rem;
+	float: left;
+}
+
+.icon-delete{
+	width: .4rem;
+	height: .4rem;
+	display: block;
+	background-position:-3.28rem -2.186rem; 
+}
+
+.search-record{
+	padding: .4rem .4rem .133rem;
+	display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+}
