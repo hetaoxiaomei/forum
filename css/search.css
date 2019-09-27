@@ -1,0 +1,120 @@
+.icon-delete,#suspension-search .arrow{
+    background-image: url(../img/post-pic02.png);
+    background-size: 50rem;
+    background-repeat: no-repeat;
+}
+
+
+/*2019.9.23*/
+#suspension-search{
+	padding: 1rem 1.5rem 1rem 0;
+	background: #fff;
+	box-sizing: border-box;
+	display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+}
+
+#suspension-search .arrow-all{padding: 0 1.5rem;}
+
+#suspension-search .arrow{
+	width: 1.1rem;
+	height: 1.8rem;
+	display: block;
+	background-position: 0 0;
+
+}
+
+#suspension-search .left{position: relative;}
+
+#suspension-search input{
+	padding: 0 1.5rem;
+	width: 100%;
+	height: 3.5rem;
+	background-color: #F5F6F7;
+	cursor:pointer;
+	border-radius: 1.8rem;
+	color: #333;
+	font-size: 1.4rem;
+	box-sizing: border-box;
+}
+
+#suspension-search .bt{
+	line-height: 3.5rem;
+	height: 3.5rem;
+	padding: 0 0 0 1.5rem;
+	text-align: center;
+	cursor:pointer;
+	color: #0096FF;
+	display: block;
+	font-size: 1.4rem;
+}
+
+.search-record-ul{
+	padding: 0 1rem 1rem .5rem;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+.search-record-ul li{
+	display: block;
+	padding:0 1.2rem;
+	font-size:1.3rem;
+	margin: 1rem 0 0 1rem;
+	background: #F3F3F3;
+	height: 2.5rem;
+	line-height: 2.5rem;
+	border-radius: 1.3rem;
+	float: left;
+}
+
+.icon-delete{
+	width: 1.5rem;
+	height: 1.5rem;
+	display: block;
+	background-position:-12.3rem -8.2rem; 
+}
+
+.search-record{
+	padding: 1.5rem 1.5rem .5rem;
+	display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+}
+
+#suspension-search-all{
+   position: fixed;
+   background: #fff;
+   bottom: -100%;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: 100;
+}
+
+.searchUp{
+    animation: searchUp .4s linear forwards;
+    -webkit-animation: searchUp .4s linear forwards;
+}
+
+@keyframes  searchUp{
+    0%{bottom:-100%;}
+    100%{bottom:0;}
+}
+
+
+@-webkit-keyframes  searchUp{
+    0%{bottom:-100%;}
+    100%{bottom:0;}
+}
+

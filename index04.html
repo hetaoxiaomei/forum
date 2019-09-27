@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="css/common.css">
     <link rel="stylesheet" type="text/css" href="css/nav.css">
     <link rel="stylesheet" type="text/css" href="css/post-content.css">
+    <link rel="stylesheet" type="text/css" href="css/search.css">
 </head> 
 <body>
     <div class="basewrap" style="padding: 0 0 8rem;">
@@ -240,7 +241,7 @@
     </footer>
 
     <!--浮层搜索栏-->
-    <div class="fix-tl-100 bg-f">
+    <div id="suspension-search-all" class="searchUp">
         <div id="suspension-search">
             <a class="arrow-all">
                 <i class="arrow"></i>
@@ -251,11 +252,6 @@
             </div>
             <a class="bt" href="javascript:;">搜索</a>
         </div> 
-        <!--搜索无数据，换个词试试-->
-        <div style="padding: 0 0 2rem;">
-            <img src="img/ranking70.png" style="display: block;width:13.5rem;margin:2rem auto 1rem;">
-            <div class="f14 ta-c" style="color: #888;">搜索无数据，换个词试试</div>
-        </div>
         <!--历史记录-->
         <div>
             <div class="search-record">
@@ -287,6 +283,10 @@
         $('.index-focus-ta-bt').on('click',function(){
             $(this).toggleClass('active');
         })
+        
+        $('#suspension-search-all').bind("touchmove",function(e){
+            e.preventDefault();
+        });
     </script>
 </body>
 </html>

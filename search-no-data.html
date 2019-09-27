@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="x5-page-mode" content="app">
+    <title>搜索结果</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/post-content.css">
+    <link rel="stylesheet" type="text/css" href="css/juhua-loading.css">
+</head> 
+<body>
+    <div class="bg-f">
+        <div id="suspension-search">
+            <a class="arrow-all">
+                <i class="arrow"></i>
+            </a>
+            <div class="center flex left">
+                <i class="search"></i>
+                <input type="search" placeholder="搜索帖子" autofocus />
+            </div>
+        </div> 
+
+        <!--加载条-->
+        <div class="ta-c" style="padding: 30px 0">	
+            <div class="juhua">
+            </div><span style="font-size:1.4rem;color: #888;">正在搜索</span>
+        </div>
+
+
+        <!--搜索无数据，换个词试试-->
+        <div style="padding: 0 0 2rem;">
+            <img src="img/ranking70.png" style="display: block;width:13.5rem;margin:2rem auto 1rem;">
+            <div class="f14 ta-c" style="color: #888;">搜索无数据，换个词试试</div>
+        </div>
+        <div>
+            <div class="search-record">
+                <p class="f15 bold" style="flex:1">推荐搜索</p>
+            </div> 
+            <ul class="search-record-ul">
+                <li>马自达</li>
+                <li>宝马</li>
+                <li>马自达</li>
+                <li>马自达</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="js/jquery-1.10.2.js"></script>
+    <script>
+        // $('.index-focus-ta-bt').on('click',function(){
+        //     $(this).toggleClass('active');
+        // })
+
+        $(window).load(function(){
+            var juhua_children='<span></span><span></span><span></span><span></span><span></span><span></span><span></span>'
+           $('.juhua').append(juhua_children)
+        })
+    </script>
+</body>
+</html>
