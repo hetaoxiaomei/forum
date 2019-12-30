@@ -126,3 +126,84 @@ footer .active {color: #0096FF;}
     background: url(../img/new-pic01.png);
     background-size: 100%;
 }
+
+/*新底部导航*/
+.newBottomNav{
+    height:5rem;
+    background: #fff;
+}
+
+.newBottomNav li i{
+    width: 2.4rem;
+    height: 2.4rem;
+    margin: .5rem auto .4rem;
+    display: block;
+    background-image: url(../img/nav01.png);
+    background-size: 50rem
+}
+
+.newBottomNav li p{
+    color: #B2B9C9;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.newBottomNav li.active p{color:#0096FF}
+
+.newBottomNav li .icon_index{
+    background-position: 0 0;
+}
+
+.newBottomNav li.active .icon_index{
+    background-position: 0 -2.6rem;
+}
+
+.newBottomNav li .icon_ranking{
+    background-position: -13rem 0;
+}
+
+.newBottomNav li .icon_post{
+    width: 5.7rem;
+    height:4.2rem;
+    background-position:-15.6rem 0;
+    margin:-2.1rem auto 0;
+    border:6px solid #fff;
+    border-radius: 4.2rem;
+}
+
+.newBottomNav li.active .icon_ranking{
+    background-position: -13rem -2.6rem;
+}
+
+.newBottomNav li .icon_type{
+    background-position: -10.4rem 0;
+}
+
+.newBottomNav li.active .icon_type{
+    background-position: -10.4rem -2.6rem;
+}
+
+.newBottomNav li .icon_me{
+    background-position: -7.8rem 0;
+}
+
+.newBottomNav li.active .icon_me{
+    background-position: -7.8rem -2.6rem;
+}
+
+.newBottomNav li .icon_dynamic{
+    background-position: -5.2rem 0;
+}
+
+.newBottomNav li.active .icon_dynamic{
+    background-position: -5.2rem -2.6rem;
+}
+
+.newBottomNav li .icon_114{
+    background-position: -2.6rem 0;
+}
+
+.newBottomNav li.active .icon_114{
+    background-position: -2.6rem -2.6rem;
+}
+

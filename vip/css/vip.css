@@ -1,0 +1,70 @@
+
+.c666{color:#666;}
+
+.c999{color: #999;}
+
+/*轮播*/
+.swiper-container-horizontal>.swiper-pagination {
+    background: rgba(0,0,0,.4);
+    height: 1.6rem;
+    line-height: 1.6rem;
+    border-radius: 1.1rem;
+    color: #fff;
+    width: auto;
+    left: auto;
+    padding: 0 .5rem;
+    font-size: 1rem;
+    right: 1rem;
+    bottom: 2rem;
+}
+
+/*商家信息*/
+.shopInfor .head{
+    width: 5.8rem;
+    height:5.8rem;
+    border-radius: 5px;
+    display: block;
+    margin: 0 0 0 1rem;
+}
+
+.group-commodity-detail{
+    font-size: 1.5rem;
+    color: #333;
+    line-height:1.6;
+}
+
+.group-commodity-detail div{max-width:100%;}
+.group-commodity-detail img{display: block;margin:.5rem 0 0;width:100%;max-width: 100%;}
+
+/*底部导航*/
+.detail-footer-nav {
+    height: 4.9rem;
+    background: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .1);
+}
+
+.detail-footer-nav li i {
+    margin: .7rem auto .4rem;
+    display: block;
+    width: 2.2rem;
+    height: 2.2rem;
+    position: relative;
+}
+
+.detail-footer-nav .f01 {
+    text-align: center;
+    color: #666;
+    font-size: 1rem;
+    margin-top: .2rem;
+}
+
+.detail-footer-nav .bt{
+    font-size: 1.6rem;
+    color: #fff;
+    text-align: center;
+    width: 60%;
+    position: relative;
+    height: 4.9rem;
+    line-height: 4.9rem;
+}
+

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="x5-page-mode" content="app">
+    <title>会员详情</title>
+    <link rel="stylesheet" href="https://j.vzan.cc/content/bbs/css/common.css">
+    <link rel="stylesheet" href="https://j.vzan.cc/content/minisns/css/swiper.min.css">
+    <link rel="stylesheet" href="../css/vip.css">
+    <style>
+        [v-cloak]{display: none}
+        .icon02{background-image: url(../img/vip01.png);background-size:50rem;background-repeat:no-repeat;}
+    </style>
+</head>
+<body>
+    <div id="vue_vip" v-cloak>
+        <div class="fix-tl">
+            <div class="basewrap d-flex d-flex-center bz bottom-line bg-f" style="height: 4rem;padding: 0 1rem">
+                <a style="width: 5rem;"><i style="display: block;width: .7rem;height: .7rem;border-top: 1px solid #ccc;border-right: 1px solid #ccc;margin: 0 .2rem 0 .5rem;transform: rotate(-135deg);"></i></a>
+                <div class="flex f16 ta-c">商品详细</div>
+                <a style="width: 5rem;"></a>
+            </div>
+        </div>
+        <div class="basewrap" style="padding:4rem 0 7rem">
+            <!--轮播-->
+            <div class="swiper-container swiper-container-horizontal swiper-container-topbanner bg-f">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" v-for='slide in Infor.slides' style="padding:100% 0 0;">
+                        <img :src="slide.img" style="position: absolute;top:50%;left: 50%;transform: translate(-50%,-50%);max-width:100%;max-height:100%;" />
+                    </div>	
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>             
+
+            <!--标题-->
+            <div class="rel" style="z-index:2;margin: -.8rem 1rem 0;background:#fff;border-radius:5px;padding: 1.5rem 1rem;">
+                <div class="d-flex d-flex-center">
+                    <div class="f16 bold flex" style="line-height:1.4">{{Infor.title}}</div>
+                    <div style="margin: 0 0 0 1rem">
+                        <i class="icon02" style="margin: 0 auto; width: 2.7rem; height: 2.7rem; display:block; background-position: -17.7rem 0px;"></i>
+                        <p class="f12 ta-c" style="color:#ee5246;margin: .4rem 0 0;">分享</p>
+                    </div>
+                </div>
+                <div class="bold" style="color:#ee5246;font-size:2.4rem;padding: .5rem 0 0;"><i class="f12">￥</i>15</div>
+                <a class="f16 bold" style="margin: 1rem 0 0;background: linear-gradient(to right,#53ACFF,#0096FF);display: block;height:4.5rem;line-height:4.5rem;border-radius:2.3rem;text-align: center;color:#fff;">
+                    <i class="icon02" style="width: 1.8rem;height:1.8rem;display:inline-block;display: inline-block;background-position:-15.4rem 0;vertical-align: -.3rem;margin: 0 .5rem 0 0;"></i>去购买
+                </a>
+                <div class="f12" style="color: #999;margin: 1rem 0 0" v-show="Infor.address!==''">地址：{{Infor.address}}</div>
+            </div>     
+            
+
+            <!--温馨提示-->
+            <div class="f12 c999 d-flex d-flex-center" style="padding:1rem 2rem 0;line-height: 1.5;">
+                <div class="flex">
+                    <i class="icon02" style="width:1.3rem;height: 1.3rem;display: inline-block;background-position:-13.7rem 0;vertical-align: -.2rem;"></i> <i class="bold">温馨提示</i>：交易时请警惕网络诈骗、欺诈交易，如遇不实，请立即举报。
+                </div>
+                <a class="f14" style="margin: 0 0 0 1rem;height:2.4rem;line-height: 2.4rem;border-radius: 1.3rem;padding: 0 1rem;color: #0096FF;
+                background: rgba(0,150,255,.1);">举报</a>
+            </div>            
+            
+            <!--商家信息-->
+            <div class="d-flex shopInfor" style="line-height: 1.3; margin: 1rem 1rem 0; padding:1rem;background:#fff;border-radius: 5px;">
+                <div class="flex">
+                    <div class="f16 c333 bold">
+                        <span class="clamp1" style="max-width: 50%;float: left;">{{shopInfor.name}}</span>
+                        <i style="height: 1.6rem;line-height: 1.6rem; color: #fff;font-size: 1rem;border-radius:.2rem;padding: 0 .5rem;margin: 0 0 0 .5rem; background:linear-gradient(to right,#ffc982,#ffae00);font-weight: bold;vertical-align: .3rem;">卖家</i>
+                    </div>
+                    <div class="f13 c666 clamp1" style="margin: .5rem 0 0;">论坛认证：{{shopInfor.id}}</div>
+                    <div class="f13 c666 clamp1" style="margin: .5rem 0 0;">他的商品：{{shopInfor.number}}</div>
+                </div>
+                <img class="head" :src="shopInfor.img">
+            </div>
+
+            <!--商品详情-->
+            <div style="padding:1.5rem 1rem; margin: 1rem 1rem 0px;background:#fff; border-radius: 4px;line-height: 1.4">
+                <div class="group-commodity-detail">
+                    <div>{{Infor.content}}</div>
+                    <div>
+                        <img :src="slide.img" v-for="slide in Infor.slides">
+                    </div>
+                   
+                </div>
+            </div>
+
+        </div>
+
+        <!--底部导航-->
+        <div class="fix-bl">
+            <ul class="d-flex basewrap detail-footer-nav">
+                <li class="flex">
+                    <a>
+                        <i class="icon02" style="background-position:0 0;"></i>
+                        <p class="f01">回到首页</p>
+                    </a>
+                </li>
+                <li class="flex">
+                    <a>
+                        <i class="icon02" style="background-position:-4.6rem 0;"></i>
+                        <p class="f01">查看买家</p>
+                    </a>
+                </li>
+                <li class="bt bold ta-c" style="background: linear-gradient(to right,#53ACFF,#0096FF);">
+                    <a style="color:#fff;display:block;"><i class="icon02" style="width: 2rem;height: 2rem;background-position: -7rem 0px;display: inline-block;margin:0 .5rem 0 0;vertical-align: -.5rem;"></i>电话联系</a>
+                </li>
+            </ul>
+        </div> 
+
+        <!--会员发布-->
+        <a class="ta-c f12 bz" style="position: fixed;right: 1rem;bottom: 7rem;width: 4.5rem;height: 4.5rem; background: #fff;border: 1px solid #e5e5e5;border-radius: 50%;display:block;z-index: 2;line-height: 1.3;padding: .7rem 0 0;">会员<br/>发布</a>
+
+    </div>
+
+    <script src="https://j.vzan.cc/scripts/jquery2.1.4/jquery.min.js"></script>
+    <script src="https://j.vzan.cc/fcontent/script/swiper.min.js"></script>
+    <script src="https://j.vzan.cc/content/minisns/js/vue.min.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#vue_vip', 
+            data:{
+                Infor:{
+                    slides:[
+                        {img:'http://i2cut.vzan.cc/image/jpg/2019/11/13/1030293c3eb07f20b84c41ade08487423be7ba.jpg!h400'},
+                        {img:'http://i2cut.vzan.cc/image/jpg/2019/11/1/1704473b62476a0536432587d90313e51a7cf7.jpg!640x360'},
+                        {img:'http://i2.vzan.cc/image/jpg/2019/12/19/1449395c62a0aa030b4af8a9cceffc810c7ca5.jpg'}
+                    ],
+                    title:'智利车厘子进口新鲜水果胜美国黑珍珠智利车厘子进口新鲜水果胜美国黑珍珠',
+                    content:'蓝莓果肉细腻，风味独特，营养丰富，多吃蓝莓能够有效促进视紫质的生成，从而达到提高视力，改善视力缓解疲劳，还能美容腻，风味独特，营养丰富，多吃蓝莓能够有效促进视紫质的生成',
+                    address:'广东省广州市天河区临河东路285号天安人寿中心'
+                },
+                shopInfor:{
+                    img:'http://i2cut.vzan.cc/image/jpg/2019/11/13/1030293c3eb07f20b84c41ade08487423be7ba.jpg!h400',
+                    name:'理智君理智君理智君理智君理智君',
+                    id:'京州市书法协会荣誉主席',
+                    number:'56'
+                }
+               
+            },
+            methods:{
+
+            }, 
+            mounted:function(){
+                var swiper = new Swiper('.swiper-container-topbanner', {
+                    paginationClickable: true,
+                    autoplay:3000,
+                    loop:1,
+                    pagination: '.swiper-pagination',
+                    paginationType: 'fraction'
+                });
+            },
+            created: function(){
+
+            }  
+        })            
+
+    </script>
+</body>
+</html>
