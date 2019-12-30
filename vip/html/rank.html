@@ -94,7 +94,7 @@
                             </p>
                             <p class="f12 clamp1 f02">{{myMember.title}}</p>
                         </div>
-                        <a class="icon02 bt01" style="background-position:0 -3.3rem;"></a>
+                        <a class="icon02 bt01" :data-clipboard-text="myMember.weChat" style="background-position:0 -3.3rem;" v-show="myMember.weChat!==''"></a>
                         <a class="icon02 bt01" :href="'tel:'+myMember.tel" style="background-position:-3.2rem -3.3rem;" v-show="myMember.tel!==''"></a>
                     </div>
 
@@ -115,8 +115,8 @@
                             </p>
                             <p class="f12 clamp1 f02">{{member.title}}</p>
                         </div>
-                        <a class="icon02 bt01" style="background-position:0 -3.3rem;"></a>
-                        <a class="icon02 bt01" :href="'tel:'+member.tel" style="background-position:-3.2rem -3.3rem;"></a>
+                        <a class="icon02 bt01" :data-clipboard-text="myMember.weChat" v-show="member.weChat!==''" style="background-position:0 -3.3rem;"></a>
+                        <a class="icon02 bt01" :href="'tel:'+member.tel" v-show="member.tel!==''" style="background-position:-3.2rem -3.3rem;"></a>
                     </div>
                 </div>
                 <!--会员无数据-->
@@ -398,6 +398,7 @@
                     id:0,
                     name:'派大鑫派大鑫派大鑫',
                     title:'赞赏市海底世界汉堡店主席',
+                    weChat:'vzan-20',
                     tel:'',
                     level:'background:linear-gradient(to right,#D3D0FD,#A39FFB)',
                     levelTitle:'青铜玩家'
@@ -413,6 +414,7 @@
                         id:0,
                         name:'派大鑫派大鑫派大鑫',
                         title:'赞赏市海底世界汉堡店主席',
+                        weChat:'',
                         tel:'123456789',
                         level:'background:linear-gradient(to right,#D3D0FD,#A39FFB)',
                         levelTitle:'青铜玩家'
@@ -423,6 +425,7 @@
                         id:0,
                         name:'派大鑫派大鑫派大鑫',
                         title:'赞赏市海底世界汉堡店主席',
+                        weChat:'vzan-20',
                         tel:'123456789',
                         level:'background:linear-gradient(to right, #38CEFF, #0096FF)',
                         levelTitle:'青铜玩家'
@@ -433,6 +436,7 @@
                         id:0,
                         name:'派大鑫派大鑫派大鑫',
                         title:'赞赏市海底世界汉堡店主席',
+                        weChat:'vzan-20',
                         tel:'123456789',
                         level:'background:linear-gradient(to right,#D3D0FD,#A39FFB)',
                         levelTitle:'青铜玩家'
@@ -443,6 +447,7 @@
                         id:0,
                         name:'派大鑫派大鑫派大鑫',
                         title:'赞赏市海底世界汉堡店主席',
+                        weChat:'vzan-20',
                         tel:'123456789',
                         level:'background:linear-gradient(to right,#D3D0FD,#A39FFB)',
                         levelTitle:'青铜玩家'
@@ -453,6 +458,7 @@
                         id:0,
                         name:'派大鑫派大鑫派大鑫',
                         title:'赞赏市海底世界汉堡店主席',
+                        weChat:'vzan-20',
                         tel:'123456789',
                         level:'background:linear-gradient(to right,#D3D0FD,#A39FFB)',
                         levelTitle:'青铜玩家'
