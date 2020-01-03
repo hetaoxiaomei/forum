@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="x5-page-mode" content="app">
+    <title>会员开通页</title>
+    <link rel="stylesheet" href="https://j.vzan.cc/content/bbs/css/common.css">
+    <style>
+        [v-cloak]{display: none}
+        body{background: #fff}
+    </style>
+</head>
+<body>
+    <div id="vue_vip" v-cloak>
+        <div class="basewrap" style="padding:0 0 6.5rem;">
+            <img src="../img/vip15.png" style="display:block;width:33.3%;margin:30% auto 0;display:block;">
+            <p class="ta-c f15 bold" style="margin: 1.5rem 0 0;">开通会员成功</p>
+            <p class="f15 ta-c" style="margin: 30% 0 0;">
+                <a style="color:#0095FF;text-decoration:underline;">去认证，完善我的名片</a>
+            </p>
+         
+        </div>    
+        <!--底部导航-->
+        <div class="fix-bl">
+            <a class="f15 bold ta-c" style="display: block; height: 5rem;line-height: 5rem;color:#fff;background:#0095FF;">查看我的个人中心</a>
+        </div>
+    </div>
+
+    <script src="https://j.vzan.cc/scripts/jquery2.1.4/jquery.min.js"></script>
+    <script src="https://j.vzan.cc/content/minisns/js/vue.min.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#vue_vip', 
+            data:{
+                serviceQr:false,
+                selectIndex:0,
+                slides:[
+                    {img:'../img/vip09.png'},
+                    {img:'../img/vip07.png'},
+                    {img:'../img/vip08.png'}
+                ],
+                slides02:[
+                    {img:'../img/vip10.png',title:'会员橱窗(示例)'},
+                    {img:'../img/vip11.png',title:'会员排行榜曝光(示例)'},
+                    {img:'../img/vip12.png',title:'称号认证及个人名片(示例)'}
+                ],
+                meals:[
+                    {day:'10天',money:'10元'},
+                    {day:'10天',money:'10元'},
+                    {day:'10天',money:'10元'},
+                    {day:'10天',money:'10元'},
+                    {day:'10天',money:'10元'}
+                ]
+
+            },
+            methods:{
+                checkMeal:function(index){
+                    this.selectIndex=index
+                },
+                checkServiceQr:function(){
+                    this.serviceQr=true
+                },
+                closeServiceQr:function(){
+                    this.serviceQr=false
+                }
+            }, 
+            mounted:function(){
+                var swiper = new Swiper('.swiper-container-topbanner', {
+                    paginationClickable: true,
+                    autoplay:3000,
+                    loop:1,
+                    pagination: '.swiper-pagination',
+                    paginationType: 'fraction'
+                });
+                $('.dialog-black-mask').bind("touchmove",function(e){e.preventDefault();});
+            },
+            created: function(){
+
+            }  
+        })            
+
+    </script>
+
+
+</body>
+</html>
