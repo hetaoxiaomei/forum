@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="x5-page-mode" content="app">
+    <title>橱窗管理</title>
+    <link rel="stylesheet" href="https://j.vzan.cc/content/bbs/css/common.css">
+    <link rel="stylesheet" type="text/css" href="../../css/nav.css">
+    <style>
+        [v-cloak]{display: none}
+        .manage .bottom .bt{height: 2.5rem;line-height:2.3rem; padding:0 1rem;border:1px solid #bbb;border-radius:1.3rem;font-size:1.2rem;color:#888;margin: 0 0 0 .5rem;}
+        .manage .top .head{width:7.5rem;height: 7.5rem;border-radius:5px;margin: 0 1rem 0 0;display: block;}
+    </style>
+</head>
+<body>
+    <div id="vue_vip" v-cloak>
+        <div class="fix-tl">
+            <div class="top-nav bottom-line">
+                <a class="left"><i class="arrow"></i></a>
+                <div class="center" style="font-weight: bold">橱窗管理</div>
+                <a class="right"></a>
+            </div>
+        </div>
+        <div class="basewrap" style="padding:4rem 0 0;">
+            <div class="bg-f manage" v-for="commodity in commoditys">
+                <div class="bottom-line d-flex top" style="padding: 1rem 1.5rem 1.5rem;margin: 1rem 0 0;">
+                    <img class="head" :src="commodity.img">
+                    <div class="flex">
+                        <div class="f14 clamp2" style="line-height:1.4;height:3.5rem;">{{commodity.title}}</div>
+                        <div class="f14 bold" style="color: #FF6C00;margin: 2rem 0 0;">{{commodity.money}}</div>
+                    </div>
+                </div>
+                <div class="d-flex d-flex-center bottom" style="padding: 1.5rem">
+                    <div class="flex f10" style="color: #FF6C00;" v-if="commodity.state==0">商品异常，已锁定</div>
+                    <div class="flex f10" style="color: #FF6C00;" v-else-if="commodity.state==1">商品风险，正审核</div>
+                    <div class="flex f10" style="color: #888;" v-else>商品已下架</div>
+                    <div class="bt">删除</div>
+                    <div class="bt">上架</div>
+                    <div class="bt">排序{{commodity.sort}}</div>
+                    <div class="bt">编辑</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://j.vzan.cc/scripts/jquery2.1.4/jquery.min.js"></script>
+    <script src="https://j.vzan.cc/content/minisns/js/vue.min.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#vue_vip', 
+            data:{
+                commoditys:[
+                    {
+                        img:'',
+                        state:0,
+                        title:'毛绒玩偶在线定制毛绒玩偶定制工费15/只玩偶在线定制毛绒玩是',
+                        money:'面议',
+                        sort:'0'
+                    },
+                    {
+                        img:'',
+                        state:0,
+                        title:'毛绒玩偶在线定制毛绒玩偶定制工费15/只玩偶在线定制毛绒玩是',
+                        money:'面议',
+                        sort:'0'
+                    } 
+                ]
+            },
+            methods:{
+
+            }, 
+            mounted:function(){
+
+            },
+            created: function(){
+
+            }  
+        })            
+    </script>
+</body>
+</html>
