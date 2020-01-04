@@ -1,13 +1,13 @@
 .icon-delete,#suspension-search .arrow{
     background-image: url(../img/post-pic02.png);
-    background-size: 50rem;
+    background-size: 500px;
     background-repeat: no-repeat;
 }
 
 
 /*2019.9.23*/
 #suspension-search{
-	padding: 1rem 1.5rem 1rem 0;
+	padding: 10px 15px 10px 0;
 	background: #fff;
 	box-sizing: border-box;
 	display: -webkit-box;
@@ -20,11 +20,11 @@
     -ms-flex-align: center;
 }
 
-#suspension-search .arrow-all{padding: 0 1.5rem;}
+#suspension-search .arrow-all{padding: 0 15px;}
 
 #suspension-search .arrow{
-	width: 1.1rem;
-	height: 1.8rem;
+	width: 11px;
+	height: 18px;
 	display: block;
 	background-position: 0 0;
 
@@ -33,55 +33,62 @@
 #suspension-search .left{position: relative;}
 
 #suspension-search input{
-	padding: 0 1.5rem;
+	padding: 0 15px;
 	width: 100%;
-	height: 3.5rem;
+	height: 35px;
 	background-color: #F5F6F7;
 	cursor:pointer;
-	border-radius: 1.8rem;
+	border-radius: 18px;
 	color: #333;
-	font-size: 1.4rem;
+	font-size: 14px;
 	box-sizing: border-box;
 }
 
 #suspension-search .bt{
-	line-height: 3.5rem;
-	height: 3.5rem;
-	padding: 0 0 0 1.5rem;
+	line-height: 35px;
+	height: 35px;
+	padding: 0 0 0 15px;
 	text-align: center;
 	cursor:pointer;
 	color: #0096FF;
 	display: block;
-	font-size: 1.4rem;
+	font-size: 14px;
+}
+
+.search-record .bold{
+	font-size:15px;
+	font-weight: bold;
 }
 
 .search-record-ul{
-	padding: 0 1rem 1rem .5rem;
+	padding: 0 10px 10px 5px;
 	box-sizing: border-box;
 	overflow: hidden;
 }
 
+.search-record-ul>li>a{color: #333}
+
 .search-record-ul li{
 	display: block;
-	padding:0 1.2rem;
-	font-size:1.3rem;
-	margin: 1rem 0 0 1rem;
+	padding:0 12px;
+	font-size:13px;
+	margin: 10px 0 0 10px;
 	background: #F3F3F3;
-	height: 2.5rem;
-	line-height: 2.5rem;
-	border-radius: 1.3rem;
+	height: 25px;
+	line-height: 25px;
+	border-radius: 13px;
 	float: left;
 }
 
 .icon-delete{
-	width: 1.5rem;
-	height: 1.5rem;
+	width: 15px;
+	height: 15px;
 	display: block;
-	background-position:-12.3rem -8.2rem; 
+	background-position:-123px -82px; 
 }
 
 .search-record{
-	padding: 1.5rem 1.5rem .5rem;
+	padding: 15px 15px 5px;
 	display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -91,6 +98,7 @@
     -webkit-align-items: center;
     -ms-flex-align: center;
 }
+
 
 #suspension-search-all{
    position: fixed;

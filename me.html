@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="x5-page-mode" content="app">
+    <title>用户中心</title>
+    <link rel="stylesheet" href="https://j.vzan.cc/content/bbs/css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/nav.css">
+    <link rel="stylesheet" type="text/css" href="css/me.css">
+    <style>
+        .icon02{background-image: url(img/post-pic02.png);background-size: 50rem;background-repeat: no-repeat;}
+        .person-infor-cell {padding: 4rem 1.5rem 0;}
+        .person-infor-cell .f02{font-size: 1.2rem;}
+        .data-ul02{margin: 1rem 1.5rem 0;}
+        .me-top{height: auto;padding: 0 0 1rem;}
+        .vipOpen{padding: 0 1.5rem 0;margin: 2rem 0 0;}
+        .vipOpen-cell{position: absolute;width:100%;height:100%;top:0;left:0;padding: 0 0 0 4rem;}
+        .vipOpen-cell .f01{font-size: 1.8rem;}
+        .vipOpen-cell .f02{margin: 1.2rem 0 0;}
+        .vipOpen-cell .bt{display: block;margin: .6rem 3.5rem 0 0; height: 3rem;width:10rem;line-height:3rem;text-align:center;font-size:1.4rem;font-weight:bold;border-radius: 1.5rem;}
+    </style>
+</head> 
+<body>
+    <div id="vue_me" v-cloak>
+        <div class="fix-tl">
+            <div class="top-nav bottom-line">
+                <a class="left">
+                <i class="arrow"></i>
+                </a>
+                <div class="center">用户中心</div>
+                <a class="right"></a>
+            </div>
+        </div>
+
+        <div class="basewrap" style="padding:4rem 0 8rem">
+            <div class="me-top">
+                <div style="color: #fff;padding:0 .8rem;height:2rem;line-height:2rem;border-radius:1rem;background: #239EFF;position: absolute;top: 1rem;right: 1.3rem;">UID:4173652200</div>
+                <div class="d-flex d-flex-center person-infor-cell">
+                    <div class="head">
+                        <img src="img/0.jpg">
+                        <i class="icon-vip"></i>
+                    </div>
+                    <div class="flex">
+                        <div style="overflow: hidden;">
+                            <p class="f01">派大鑫派大鑫派大鑫</p>
+                            <i class="icon-boy"></i>
+                            <i class="icon-girl"></i>
+                            <i class="icon-grade" style="background: linear-gradient(to right,#D3D0FD,#A39FFB)">青铜玩家</i>
+                        </div>
+                        <p class="f02">简介：留下一句话让大家认识你</p>
+                    </div>
+                    <i style="display: block;width: 0.6rem;height: 0.6rem;border-top: 1px solid #fff;border-right: 1px solid #fff;margin: 0px 0 0px 0;transform:rotate(45deg);"></i>
+                </div>
+                <!-- <i class="icon-edit"></i> -->
+                <ul class="d-flex d-flex-center data-ul01">
+                    <li class="flex right-line">
+                        <p class="f01">234</p>
+                        <p class="f02">关注</p>
+                    </li>
+                    <li class="flex right-line">
+                        <p class="f01">234</p>
+                        <p class="f02">粉丝</p>
+                    </li>
+                    <li class="flex">
+                        <p class="f01">￥234</p>
+                        <p class="f02">赏金</p>
+                    </li>         
+                    <li class="flex rel" style="z-index: 2;">
+                        <img src="img/ranking81.png" style="position:absolute;top:50%;left:-1.1rem;width: 1.1rem;transform: translate(0,-50%)">
+                        <p class="f01" style="position: relative">
+                            <i style="color: transparent">234</i>
+                            <i class="icon02" style="position:absolute;top: .5rem;left: 50%;transform: translate(-50%,-50%);width:1.9rem;height:1.9rem;display:block;margin:0 auto;background-position:-40.4rem -2.7rem;"></i>
+                        </p>
+                        <p class="f02">我的资料</p>
+                    </li>                                       
+                </ul>
+                <!--开通会员-->
+                <div class="rel vipOpen" v-show="vipOpenSeen">
+                    <img src="img/ranking82.png" style="width: 100%;display:block"> 
+                    <div class="d-flex d-flex-center bz vipOpen-cell">
+                        <div class="flex" style="color: #FFEBE5">
+                            <p class="bold f01">微赞大会员</p>
+                            <p class="f12 f02" >开通会员，享受更多权益</p>
+                        </div>
+                        <div>
+                            <div style="overflow: hidden;margin: -.5rem 2.7em 0 0;">
+                                <div class="ta-r bz fr" style="padding: .3rem; width: 2.4rem;height: 2.4rem;" @click="openVipDialog()">
+                                    <i class="icon02" style="width:1.8rem;height:1.8rem;display:block;background-position:-36.7rem -2.7rem;"></i>
+                                </div>
+                            </div>
+                            <a class="bt" style="color:#4F2E21;background: linear-gradient(to right,#F0E0CE,#D8A787);">开通会员<i class="icon02" style="vertical-align: -.2rem;margin: 0 0 0 .8rem;width: 1.5rem;height:1.5rem;display:inline-block;background-position:-38.7rem -2.7rem;"></i> </a>
+                        </div>
+                    </div>
+                </div> 
+                <!--会员失效-->
+                <div class="rel vipOpen" v-show="vipOpenSeen==false">
+                    <img src="img/ranking82.png" style="width: 100%;display:block"> 
+                    <div class="d-flex d-flex-center bz vipOpen-cell">
+                        <div class="flex" style="color: #FFEBE5">
+                            <p class="bold f01" style="font-size: 1.4rem;">微赞大会员</p>
+                            <p style="font-size: 1.1rem;margin: .5rem 0 0;">剩余免费发帖：15条</p>
+                            <p style="font-size: 1.1rem;margin: .5rem 0 0;">剩余置顶帖：5条</p>
+                            <p style="font-size: 1.1rem;margin: .5rem 0 0;">到期时间：2020/12/24</p>
+                        </div>
+                        <div>
+                            <div style="overflow: hidden;margin: -.5rem 2.7em 0 0;">
+                                <div class="ta-r bz fr" style="padding: .3rem; width: 2.4rem;height: 2.4rem;" @click="openVipDialog()">
+                                    <i class="icon02" style="width:1.8rem;height:1.8rem;display:block;background-position:-36.7rem -2.7rem;"></i>
+                                </div>
+                            </div>
+                            <a class="bt" style="color:#4F2E21;background: linear-gradient(to right,#38CEFF,#0096FF);color:#fff;">立即续费</a>
+                        </div>
+                    </div>
+                </div> 
+
+            </div>
+            <ul class="data-ul02">
+                <li>
+                    <i class="icon icon-my-post"></i>
+                    <p class="f01">我的发帖</p>
+                    <p class="f02">8</p>
+                </li>
+                <li>
+                    <i class="icon icon-my-save"></i>
+                    <p class="f01">我的收藏</p>
+                    <p class="f02">8</p>
+                </li> 
+                <li>
+                    <i class="icon icon-my-participate"></i>
+                    <p class="f01">我的参与</p>
+                    <p class="f02">8</p>
+                </li>  
+                <li>
+                    <i class="icon icon-my-integral"></i>
+                    <p class="f01">积分兑换</p>
+                    <p class="f02">8</p>
+                </li>                                     
+            </ul>
+
+            <ul class="data-ul02" style="margin:1rem 1.5rem 0">
+                <li>
+                    <i class="icon" style="background-position:0 -42.8rem;"></i>
+                    <p class="f01">橱窗管理</p>
+                </li>            
+                <li>
+                    <i class="icon icon-card-holder"></i>
+                    <p class="f01">名片夹</p>
+                </li>
+                <li>
+                    <i class="icon icon-news-center"></i>
+                    <p class="f01">消息中心</p>
+                </li> 
+                <li>
+                    <i class="icon icon-my-coupon"></i>
+                    <p class="f01">我的卡券</p>
+                </li>  
+                <li>
+                    <i class="icon icon-my-ad"></i>
+                    <p class="f01">我的广告</p>
+                </li>  
+                <li>
+                    <i class="icon icon-my-chat"></i>
+                    <p class="f01">我的聊天</p>
+                </li>
+                <li>
+                    <i class="icon icon-clean-cache"></i>
+                    <p class="f01">清理缓存</p>
+                </li> 
+                <li>
+                    <i class="icon icon-contact-manage"></i>
+                    <p class="f01">联系管理</p>
+                </li>  
+                <li>
+                    <i class="icon icon-about-us"></i>
+                    <p class="f01">关于我们</p>
+                </li>                                                
+            </ul>
+
+            <ul class="data-ul02" style="margin:1rem 1.5rem 0">
+                <li>
+                    <i class="icon icon-categorization-infor"></i>
+                    <p class="f01">分类信息</p>
+                </li>                                               
+            </ul>    
+
+            <div class="d-flex" style="margin: 1rem 1.5rem;">
+                <div class="manage-bt" style="width: 30%;margin: 0 1rem 0 0;background: rgba(0,150,255,.1);color: #0096FF">切换马甲</div>
+                <div class="manage-bt flex" style="width: 30%;margin: 0;">进入管理中心</div>    
+            </div>
+
+        </div>
+
+        <!--底部导航-->
+        <div class="fix-bl">
+            <ul class="basewrap d-flex newBottomNav">
+                <li class="flex">
+                    <i class="icon_index"></i>
+                    <p>首页</p>
+                </li>
+                <li class="flex active">
+                    <i class="icon_ranking"></i>
+                    <p>排行榜</p>
+                </li>  
+                <li class="flex" @click="openNavDialog()">
+                    <i class="icon_post"></i>
+                    <p style="color: #262626">发帖</p>
+                </li>   
+                <li class="flex">
+                    <i class="icon_type"></i>
+                    <p>版块</p>
+                </li>  
+                <li class="flex">
+                    <i class="icon_me"></i>
+                    <p>我的</p>
+                </li>                                                               
+            </ul>
+        </div>
+
+        <!--发帖弹框-->
+        <div class="fix-tl-100" style="z-index: 3" v-show="navDialogSeen">
+            <div class="dialog-black-mask"></div>
+            <div class="fix-bl bg-f">
+                <div class="d-flex" style="padding:3rem 10% 0;">
+                    <a class="ta-c flex">
+                        <img src="img/nav03.png" style="width:5.5rem;display:block;margin: 0 auto;">
+                        <p class="f11" style="margin: 1rem 0 0;">发帖</p>
+                    </a>
+                    <a class="ta-c flex">
+                        <img src="img/nav02.png" style="width:5.5rem;display:block;margin: 0 auto;">
+                        <p class="f11" style="margin: 1rem 0 0;">开通会员</p>
+                    </a>
+                </div>
+                <img @click="closeNavDialog()" src="img/nav04.png" style="width:3.2rem;display:block;margin: 2rem auto 10rem;">
+            </div>
+        </div>
+
+        <!--会员权益弹框-->
+        <div class="fix-tl-100" v-show="vipDialogSeen">
+            <div class="dialog-black-mask" @click="closeVipDialog()"></div>
+            <div class="dialog-middle" style="color: #FFEBE5;background: url(img/ranking83.png);background-size: cover;">
+                <div style="padding:2.5rem 8% 2rem">
+                    <div style="font-size: 2.5rem;">会员权益</div>
+                    <div style="height:.5rem;width:2.6rem;border-radius: .3rem;background: #FFEBE5;margin: 1rem 0 0;"></div>
+                    <div class="f14" style="line-height: 1.4;padding: 1rem 0 0;">
+                        <p style="margin: 1rem 0 0;">1、发帖费用享受折扣优惠</p>
+                        <p style="margin: 1rem 0 0;">2、置顶费用享受折扣优惠</p>
+                        <p style="margin: 1rem 0 0;">3、每日发帖数量不受限制</p>
+                        <p style="margin: 1rem 0 0;">4、免费查看付费访问板块</p>
+                        <p style="margin: 1rem 0 0;">5、首页详细页显示认证称号</p>
+                        <p style="margin: 1rem 0 0;">6、免费进行名片认证</p>
+                        <p style="margin: 1rem 0 0;">7、拥有个人商品橱窗</p>
+                        <p style="margin: 1rem 0 0;">8、一个月固定30天计算，不以自然月计算。一年固定365天计算。</p>
+                    </div>
+                    <a class="ta-c f15 bold" style="background:linear-gradient(to right,#EFDECC,#D9A98A);height: 4.2rem;line-height: 4.2rem;color: #4F2E21;border-radius: 2.1rem;margin: 2rem 10% 0;display: block">开通会员</a>
+                </div> 
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://j.vzan.cc/scripts/jquery2.1.4/jquery.min.js"></script>
+    <script src="https://j.vzan.cc/content/minisns/js/vue.min.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#vue_me', 
+            data:{
+                vipOpenSeen:true,
+                vipDialogSeen:false,
+                navDialogSeen:false
+            },
+            methods:{
+                openVipDialog:function(){
+                    this.vipDialogSeen=true
+                },
+                closeVipDialog:function(){
+                    this.vipDialogSeen=false
+                },
+                openNavDialog:function(){
+                    this.navDialogSeen=true
+                },
+                closeNavDialog:function(){
+                    this.navDialogSeen=false
+                }
+            }, 
+            mounted:function(){
+                $('.dialog-black-mask').bind("touchmove",function(e){e.preventDefault();});
+            },
+            created: function(){
+
+            }  
+        })            
+
+    </script>
+
+</body>
+</html>

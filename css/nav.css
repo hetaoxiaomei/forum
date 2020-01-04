@@ -163,9 +163,9 @@ footer .active {color: #0096FF;}
 }
 
 .newBottomNav li .icon_post{
-    width: 5.7rem;
+    width: 5.5rem;
     height:4.2rem;
-    background-position:-15.6rem 0;
+    background-position:-15.7rem -.1rem;
     margin:-2.1rem auto 0;
     border:6px solid #fff;
     border-radius: 4.2rem;
