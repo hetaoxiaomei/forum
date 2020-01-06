@@ -27,141 +27,191 @@
     position: absolute;bottom:.8rem;transform: translate(-50%,0);-webkit-transform: translate(-50%,0);display:none;}
         .select-nav li.active{color: #262626}
         .select-nav li.active i{display: block}
+        /*橱窗*/
+        .select-list-ul{padding:1rem;overflow: hidden; column-count: 2;column-gap: 0;line-height: 1.3}
+        .select-list-ul li{ -webkit-column-break-inside: avoid;break-inside: avoid;counter-increment: item-counter;padding:0 .5rem;box-sizing:border-box;}
+        .select-list-ul li>a{display: block;border-radius: 5px;overflow: hidden; }
+        .select-list-ul li img{display: block;width: 100%;}
+        .select-list-ul li .bottom{padding:.6rem 1rem 1.5rem;background: #fff;margin: 0 0 1rem;}
+        .select-list-ul li .f01{line-height: 1.6;}
+        .select-list-ul li .money{color: #FF4343;font-weight: bold;margin: 1rem 0 0;}
     </style>
 </head> 
 <body>
-    <div id="topNav" class="fix-tl none">
-        <div class="top-nav bottom-line">
-            <a class="left">
-               <i class="arrow"></i>
-            </a>
-            <div class="center">派大鑫主页</div>
-            <a class="right">
-                <i class="more"></i>
-            </a>
+    <div id="vue_me" v-cloak>
+        <div id="topNav" class="fix-tl none">
+            <div class="top-nav bottom-line">
+                <a class="left">
+                <i class="arrow"></i>
+                </a>
+                <div class="center">派大鑫主页</div>
+                <a class="right">
+                    <i class="more"></i>
+                </a>
+            </div>
         </div>
-    </div>
 
-    <div class="basewrap" style="padding:0 0 7rem">
-        <div class="me-top">
-            <div class="person-infor-cell">
-                <div class="head" style="margin:0 auto;">
-                    <img src="img/0.jpg">
-                    <i class="icon-vip"></i>
+        <div class="basewrap" style="padding:0 0 7rem">
+            <div class="me-top">
+                <div class="person-infor-cell">
+                    <div class="head" style="margin:0 auto;">
+                        <img src="img/0.jpg">
+                        <i class="icon-vip"></i>
+                    </div>
+                    <div class="ta-c" style="overflow: hidden;margin:1rem 0 0;">
+                        <p class="f01">派大鑫派大鑫派大鑫</p>
+                        <i class="icon-boy"></i>
+                        <i class="icon-girl"></i>
+                        <i class="icon-grade">青铜玩家</i>
+                    </div>
+                    <div class="ta-c cfff" style="font-size: 1.3rem;padding:1rem 0 .5rem">关注 95&nbsp;&nbsp;|&nbsp;&nbsp;粉丝 9394万</div>
+                    <p class="f02 ta-c">简介：留下一句话让大家认识你</p>
                 </div>
-                <div class="ta-c" style="overflow: hidden;margin:1rem 0 0;">
-                    <p class="f01">派大鑫派大鑫派大鑫</p>
-                    <i class="icon-boy"></i>
-                    <i class="icon-girl"></i>
-                    <i class="icon-grade">青铜玩家</i>
+                <div class="ta-c" style="margin: 1.5rem 0 0;">
+                    <div class="sixin-bt"><i class="icon-sixin"></i>私信</div>
+                    <div class="focus-bt" data-isactive="0"><i class="icon-focus"></i>关注</div>
                 </div>
-                <div class="ta-c cfff" style="font-size: 1.3rem;padding:1rem 0 .5rem">关注 95&nbsp;&nbsp;|&nbsp;&nbsp;粉丝 9394万</div>
-                <p class="f02 ta-c">简介：留下一句话让大家认识你</p>
+                <i class="icon-edit" style="background-position:-24.7rem 0;"></i>
+                <i class="icon-back" style="background-position:-27.4rem 0;"></i>
+                <ul class="d-flex d-flex-center data-ul01">
+                    <li class="flex right-line">
+                        <p class="f01">234</p>
+                        <p class="f02">TA的帖子</p>
+                    </li>
+                    <li class="flex right-line">
+                        <p class="f01">234</p>
+                        <p class="f02">TA的参与</p>
+                    </li>
+                    <li class="flex right-line">
+                        <p class="f01">234</p>
+                        <p class="f02">分类信息</p>
+                    </li>         
+                    <li class="flex right-line">
+                        <p class="f01">13131651</p>
+                        <p class="f02">UID</p>
+                    </li>                                       
+                </ul>
             </div>
-            <div class="ta-c" style="margin: 1.5rem 0 0;">
-                <div class="sixin-bt"><i class="icon-sixin"></i>私信</div>
-                <div class="focus-bt" data-isactive="0"><i class="icon-focus"></i>关注</div>
-            </div>
-            <i class="icon-edit" style="background-position:-24.7rem 0;"></i>
-            <i class="icon-back" style="background-position:-27.4rem 0;"></i>
-            <ul class="d-flex d-flex-center data-ul01">
-                <li class="flex right-line">
-                    <p class="f01">234</p>
-                    <p class="f02">TA的帖子</p>
+
+            <!-- <ul class="data-ul02">
+                <li>
+                    <i class="icon icon-my-participate"></i>
+                    <p class="f01">Ta的参与</p>
+                    <p class="f02">8</p>
+                </li>          
+
+                <li>
+                    <i class="icon icon-kind-infor"></i>
+                    <p class="f01">分类信息</p>
+                    <p class="f02">8</p>
+                </li> 
+                <li>
+                    <i class="icon icon-my-post"></i>
+                    <p class="f01">Ta的资料</p>
                 </li>
-                <li class="flex right-line">
-                    <p class="f01">234</p>
-                    <p class="f02">TA的参与</p>
-                </li>
-                <li class="flex right-line">
-                    <p class="f01">234</p>
-                    <p class="f02">分类信息</p>
-                </li>         
-                <li class="flex right-line">
-                    <p class="f01">13131651</p>
-                    <p class="f02">UID</p>
-                </li>                                       
+                <li>
+                    <i class="icon icon-about-us02"></i>
+                    <p class="f01">关于我们</p>
+                </li>                                     
+            </ul>  -->
+
+            <ul class="select-nav d-flex">
+                <li class="flex active">主页<i></i></li>
+                <li class="flex">橱窗<i></i></li>
+                <li class="flex">帖子<i></i></li>
             </ul>
+
+            <!--橱窗-->
+            <div>
+                <ul class="select-list-ul" v-if="commoditys!==''">
+                    <li v-for="commodity in commoditys">
+                        <a>
+                            <img class="head" :src="commodity.img">
+                            <div class="bottom">
+                                <p class="f13 clamp2 f01">{{commodity.title}}</p>
+                                <p class="money f15">{{commodity.money}}</p>
+                            </div>
+                        </a>                
+                    </li>                                      
+                </ul>
+                <!--无数据-->
+                <div class="bg-f" style="padding: 5rem 0;" v-else>
+                    <img src="../../img/ranking86.png" style="width: 50%;display:block;margin:0 auto;">
+                    <p class="ta-c f14" style="color: #888;margin:1rem;">论坛还没有上架商品</p>
+                </div>
+            </div>
+            
         </div>
 
-        <!-- <ul class="data-ul02">
-            <li>
-                <i class="icon icon-my-participate"></i>
-                <p class="f01">Ta的参与</p>
-                <p class="f02">8</p>
-            </li>          
-
-            <li>
-                <i class="icon icon-kind-infor"></i>
-                <p class="f01">分类信息</p>
-                <p class="f02">8</p>
-            </li> 
-            <li>
-                <i class="icon icon-my-post"></i>
-                <p class="f01">Ta的资料</p>
-            </li>
-            <li>
-                <i class="icon icon-about-us02"></i>
-                <p class="f01">关于我们</p>
-            </li>                                     
-        </ul>  -->
-
-        <ul class="select-nav d-flex">
-            <li class="flex active">主页<i></i></li>
-            <li class="flex">橱窗<i></i></li>
-            <li class="flex">帖子<i></i></li>
-        </ul>
-
-        
+        <!--底部导航栏-->
+        <footer class="fix-bl">
+            <div class="basewrap shadowTop">
+                <a href="" class="home active">
+                    <svg aria-hidden="true" class="footer-icon icon-home">
+                        <use xlink:href="../img/iconfont.svg#icon-home"></use>
+                    </svg>
+                    <svg aria-hidden="true" class="footer-icon icon-homeActive">
+                        <use xlink:href="../img/iconfont.svg#icon-homeActive"></use>
+                    </svg>
+                    <p>首页</p>
+                </a>
+                <a href="" class="recommand">
+                    <svg aria-hidden="true" class="footer-icon icon-recommand">
+                        <use xlink:href="../img/iconfont.svg#icon-recommand"></use>
+                    </svg>
+                    <svg aria-hidden="true" class="footer-icon icon-recommandActive">
+                        <use xlink:href="../img/iconfont.svg#icon-recommandActive"></use>
+                    </svg>
+                    <p>精选</p>
+                </a>
+                <a class="publish">
+                    <div class="footer-icon"></div>
+                    <p>发帖</p>
+                </a>
+                <a href="" class="action MsgAllRead">
+                    <svg aria-hidden="true" class="footer-icon icon-action">
+                        <use xlink:href="../img/iconfont.svg#icon-action"></use>
+                    </svg>
+                    <svg aria-hidden="true" class="footer-icon icon-actionActive">
+                        <use xlink:href="../img/iconfont.svg#icon-actionActive"></use>
+                    </svg>
+                    <p>动态<i class="dt_msgnum" style="display:none">0</i></p>
+                </a>
+                <a href="" class="mine">
+                    <svg aria-hidden="true" class="footer-icon icon-mine">
+                        <use xlink:href="../img/iconfont.svg#icon-mine"></use>
+                    </svg>
+                    <svg aria-hidden="true" class="footer-icon icon-mineActive">
+                        <use xlink:href="../img/iconfont.svg#icon-mineActive"></use>
+                    </svg>
+                    <p>我的</p>
+                </a>
+            </div>
+        </footer>
     </div>
-
-    <!--底部导航栏-->
-    <footer class="fix-bl">
-        <div class="basewrap shadowTop">
-            <a href="" class="home active">
-                <svg aria-hidden="true" class="footer-icon icon-home">
-                    <use xlink:href="../img/iconfont.svg#icon-home"></use>
-                </svg>
-                <svg aria-hidden="true" class="footer-icon icon-homeActive">
-                    <use xlink:href="../img/iconfont.svg#icon-homeActive"></use>
-                </svg>
-                <p>首页</p>
-             </a>
-            <a href="" class="recommand">
-                <svg aria-hidden="true" class="footer-icon icon-recommand">
-                    <use xlink:href="../img/iconfont.svg#icon-recommand"></use>
-                </svg>
-                <svg aria-hidden="true" class="footer-icon icon-recommandActive">
-                    <use xlink:href="../img/iconfont.svg#icon-recommandActive"></use>
-                </svg>
-                <p>精选</p>
-            </a>
-            <a class="publish">
-                <div class="footer-icon"></div>
-                <p>发帖</p>
-            </a>
-            <a href="" class="action MsgAllRead">
-                <svg aria-hidden="true" class="footer-icon icon-action">
-                    <use xlink:href="../img/iconfont.svg#icon-action"></use>
-                </svg>
-                <svg aria-hidden="true" class="footer-icon icon-actionActive">
-                    <use xlink:href="../img/iconfont.svg#icon-actionActive"></use>
-                </svg>
-                <p>动态<i class="dt_msgnum" style="display:none">0</i></p>
-            </a>
-            <a href="" class="mine">
-                <svg aria-hidden="true" class="footer-icon icon-mine">
-                    <use xlink:href="../img/iconfont.svg#icon-mine"></use>
-                </svg>
-                <svg aria-hidden="true" class="footer-icon icon-mineActive">
-                    <use xlink:href="../img/iconfont.svg#icon-mineActive"></use>
-                </svg>
-                <p>我的</p>
-            </a>
-        </div>
-    </footer>
     
-    <script src="js/jquery-1.10.2.js"></script>
+    <script src="https://j.vzan.cc/scripts/jquery2.1.4/jquery.min.js"></script>
+    <script src="https://j.vzan.cc/fcontent/script/swiper.min.js"></script>
+    <script src="https://j.vzan.cc/content/minisns/js/vue.min.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#vue_me', 
+            data:{
+                commoditys:[
+                    {img:'http://i2cut.vzan.cc/image/jpg/2019/11/2/144920be2d369e5e04466484e699c460f6bf4e.jpg!200x200',title:'好吃好玩',money:'面议'},
+                    {img:'http://i2cut.vzan.cc/image/jpg/2019/11/2/144920be2d369e5e04466484e699c460f6bf4e.jpg!200x200',title:'好吃好玩',money:'面议'}
+                ]
+            },
+            methods:{
+            }, 
+            mounted:function(){
+            },
+            created: function(){
+            }  
+        })            
+
+    </script>
+
     <script>;
         $('.focus-bt').on('click',function(){
             if($(this).data('isactive') == 0){
