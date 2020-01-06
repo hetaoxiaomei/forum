@@ -71,8 +71,12 @@
                         <span class="clamp1" style="max-width: 50%;float: left;">{{shopInfor.name}}</span>
                         <i style="height: 1.6rem;line-height: 1.6rem; color: #fff;font-size: 1rem;border-radius:.2rem;padding: 0 .5rem;margin: 0 0 0 .5rem; background:linear-gradient(to right,#ffc982,#ffae00);font-weight: bold;vertical-align: .3rem;">卖家</i>
                     </div>
-                    <div class="f13 c666 clamp1" style="margin: .5rem 0 0;">论坛认证：{{shopInfor.id}}</div>
-                    <div class="f13 c666 clamp1" style="margin: .5rem 0 0;">他的商品：{{shopInfor.number}}</div>
+                    <div class="f12 c666 clamp1" style="margin: .5rem 0 0;">论坛认证：{{shopInfor.id}}</div>
+                    <div class="f12 c666 clamp1" style="margin: .5rem 0 0;">
+                        <span style="height: 2rem;line-height: 2rem;color: #FF3854; background: #FFE7EA;border-radius: 1rem;padding: 0 .8rem;">
+                            <i class="icon02" style="display:inline-block; width: 1rem;height:1.1rem;margin: 0 .5rem 0 0;vertical-align: -.1rem; background-position:-13.6rem -3.3rem;"></i>TA的商品：{{shopInfor.number}}
+                        </span>
+                    </div>
                 </div>
                 <img class="head" :src="shopInfor.img">
             </div>
@@ -112,7 +116,7 @@
         </div> 
 
         <!--会员发布-->
-        <a class="ta-c f12 bz" style="position: fixed;right: 1rem;bottom: 7rem;width: 4.5rem;height: 4.5rem; background: #fff;border: 1px solid #e5e5e5;border-radius: 50%;display:block;z-index: 2;line-height: 1.3;padding: .7rem 0 0;">会员<br/>发布</a>
+        <img src="../img/vip16.png" style="position: fixed;right: 1rem;bottom: 7rem;width: 5.5rem;height: 5.5rem;border-radius: 50%;display:block;z-index: 2;line-height: 1.3;">
 
     </div>
 
