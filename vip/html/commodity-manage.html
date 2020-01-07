@@ -13,8 +13,9 @@
     <link rel="stylesheet" type="text/css" href="../../css/nav.css">
     <style>
         [v-cloak]{display: none}
-        .manage .bottom .bt{height: 2.5rem;line-height:2.3rem; padding:0 1rem;border:1px solid #bbb;border-radius:1.3rem;font-size:1.2rem;color:#888;margin: 0 0 0 .5rem;}
+        .manage .bottom .bt{height: 2.3rem;line-height:2.3rem; padding:0 1rem;border:1px solid #bbb;border-radius:1.3rem;font-size:1.2rem;color:#888;margin: 0 0 0 .5rem;}
         .manage .top .head{width:7.5rem;height: 7.5rem;border-radius:5px;margin: 0 1rem 0 0;display: block;}
+        .top-line:before {border-bottom: 1px solid #e5e5e5;}
     </style>
 </head>
 <body>
@@ -27,7 +28,7 @@
             </div>
         </div>
         <div class="basewrap" style="padding:4rem 0 0;">
-            <div class="bg-f manage" v-for="commodity in commoditys">
+            <div class="bg-f manage" v-for="commodity,index in commoditys">
                 <div class="bottom-line d-flex top" style="padding: 1rem 1.5rem 1.5rem;margin: 1rem 0 0;">
                     <img class="head" :src="commodity.img">
                     <div class="flex">
@@ -41,8 +42,21 @@
                     <div class="flex f10" style="color: #888;" v-else>商品已下架</div>
                     <div class="bt">删除</div>
                     <div class="bt">上架</div>
-                    <div class="bt">排序{{commodity.sort}}</div>
+                    <div class="bt" @click="openSortDialog(commodity)">排序{{commodity.sort}}</div>
                     <div class="bt">编辑</div>
+                </div>
+            </div>
+        </div>
+
+        <!--排序弹框-->
+        <div class="fix-tl-100" v-show="sortDialogSeen">
+            <div class="dialog-black-mask" @click="closeSortDialog()"></div>
+            <div class="dialog-middle">
+                <p class="f16 bold ta-c" style="padding:3rem 0 1.5rem;">排序调整</p>
+                <input v-model.number="item.sort" class="f14 ta-c" type="tel" placeholder="排序值越大越靠前" style="border:1px solid #bbb;display:block;margin:0 auto;padding: 1rem 3rem;border-radius: 2px;">
+                <div class="d-flex f16 ta-c bold top-line" style="line-height: 4.9rem;height:4.9rem;margin: 3rem 0 0;">
+                    <div class="flex right-line" style="color: #888;" @click="closeSortDialog()">取消</div>
+                    <div class="flex" style="color: #0096FF;" @click="sureSort()">确定</div>
                 </div>
             </div>
         </div>
@@ -55,25 +69,38 @@
         var vm = new Vue({
             el:'#vue_vip', 
             data:{
+                sortDialogSeen:false,
                 commoditys:[
                     {
                         img:'',
                         state:0,
                         title:'毛绒玩偶在线定制毛绒玩偶定制工费15/只玩偶在线定制毛绒玩是',
                         money:'面议',
-                        sort:'0'
+                        sort:0
                     },
                     {
                         img:'',
                         state:0,
                         title:'毛绒玩偶在线定制毛绒玩偶定制工费15/只玩偶在线定制毛绒玩是',
                         money:'面议',
-                        sort:'0'
+                        sort:5
                     } 
-                ]
+                ],
+                item:{
+                    sort:''
+                }
             },
             methods:{
-
+                openSortDialog:function(item){
+                    this.sortDialogSeen=true;
+                    this.item = item;
+                },
+                closeSortDialog:function(){
+                    this.sortDialogSeen=false
+                },
+                sureSort:function(){
+                    this.sortDialogSeen=false
+                }
             }, 
             mounted:function(){
 

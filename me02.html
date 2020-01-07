@@ -116,9 +116,7 @@
             </ul>  -->
 
             <ul class="select-nav d-flex">
-                <li class="flex active">主页<i></i></li>
-                <li class="flex">橱窗<i></i></li>
-                <li class="flex">帖子<i></i></li>
+                <li class="flex" v-for="nav,index in navs" :class="{active:selectIndex==index}" @click="checkNav(index)">{{nav.item}}<i></i></li>
             </ul>
 
             <!--橱窗-->
@@ -197,12 +195,21 @@
         var vm = new Vue({
             el:'#vue_me', 
             data:{
+                selectIndex:0,
+                navs:[
+                    {item:'主页'},
+                    {item:'橱窗'},
+                    {item:'帖子'}
+                ],
                 commoditys:[
                     {img:'http://i2cut.vzan.cc/image/jpg/2019/11/2/144920be2d369e5e04466484e699c460f6bf4e.jpg!200x200',title:'好吃好玩',money:'面议'},
                     {img:'http://i2cut.vzan.cc/image/jpg/2019/11/2/144920be2d369e5e04466484e699c460f6bf4e.jpg!200x200',title:'好吃好玩',money:'面议'}
                 ]
             },
             methods:{
+                checkNav:function(index){
+                    this.selectIndex=index
+                }
             }, 
             mounted:function(){
             },

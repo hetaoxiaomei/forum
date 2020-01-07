@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="x5-page-mode" content="app">
+    <title>编辑商品</title>
+    <link rel="stylesheet" href="https://j.vzan.cc/content/bbs/css/common.css">
+    <link rel="stylesheet" type="text/css" href="../../css/nav.css">
+    <style>
+        .select-radio.active{border: none;background-position:-15.2rem -5.1rem; background-image: url(../../img/post-pic02.png);background-size: 50rem;background-repeat: no-repeat;}
+        input::-webkit-input-placeholder {color: #BBBBBB;}
+        input::placeholder{color: #BBBBBB;}
+        textarea::placeholder {color: #BBBBBB;}
+        .select-radio{box-sizing: border-box;vertical-align: -.1rem;width: 1.2rem;height: 1.2rem;border-radius: .2rem;border: 1px solid #888;display: inline-block;margin: 0 .5rem 0 0;}
+        .pic-ul {overflow: hidden;padding:1rem 0;}
+        .pic-ul li {width: 75px;height: 75px;margin-right: 10px;margin-bottom: 0.8rem;float: left;position: relative;overflow: hidden;border-radius: 4px;}
+        .pic-ul li img {width: 100%;height: 100%;display: block;}
+        .pic-ul li .close {width: 16px;height: 16px;position: absolute;top: 0;right: 0;}
+    </style>
+<body>
+    <div id="vue_me" v-cloak>
+        <div class="fix-tl">
+            <div class="top-nav bottom-line">
+                <a class="left"><i class="arrow"></i></a>
+                <div class="center bold">编辑商品</div> 
+                <a class="right"></a>
+            </div>
+        </div>
+        <div class="basewrap" style="padding:5rem 1.5rem 8rem ">
+            <div class="bg-f" style="padding:0 1rem;">               
+                <div class="d-flex d-flex-center bottom-line f14" style="height: 5rem;">
+                    <div class="flex">
+                        <input class="f14" v-model.trim="commodity.title" placeholder="请输入商品标题，限30字" style="display: block;width:100%;">
+                    </div>
+                </div>
+
+                <div class="bottom-line" style="padding: 1.5rem 0;">
+                    <textarea class="f14"  v-model.trim="commodity.content" style="width: 100%;display:block;height:10rem;" placeholder="请填写商品详情"></textarea>
+                    <ul class="pic-ul">
+                        <li v-for="(pic,index) in commodity.dynamicPics">
+                            <img class="close" @click="delDynamicPics(index)"  src="../../img/ranking32.png">
+                            <img :src="pic.img">
+                        </li>
+                        <li @click="addDynamicPics()" v-show="add">
+                            <img class="pic" src="../../img/ranking33.png">
+                        </li>
+                    </ul>
+                    <p class="f11" style="color:#0096FF;">推荐尺寸800*800px，最多9张</p>
+                </div> 
+
+                <div class="d-flex d-flex-center bottom-line f14" style="height: 5rem;">
+                    <div class="bold">价格</div>  
+                    <div class="flex">
+                        <input v-model.number="commodity.price" class="f14 ta-r" type="tel" placeholder="¥0.00" style="display: block;width:100%;">
+                    </div>
+                    <div style="padding: 0 0 0 3rem;" @click="checkPrince()">
+                        <i class="select-radio" :class="{active:commodity.price==''}"></i>面议
+                    </div>
+                </div> 
+
+                <div class="d-flex d-flex-center bottom-line f14" style="height: 5rem;">
+                    <div class="bold">电话联系</div>    
+                    <div class="flex">
+                        <input v-model.number="commodity.tel" type="tel" class="f14 ta-r" placeholder="请输入手机号码或座机号码" style="display: block;width:100%;">
+                    </div>
+                </div> 
+                <div class="d-flex d-flex-center bottom-line 14" style="height: 5rem;">
+                    <div class="bold">地址</div>    
+                    <div class="flex">
+                        <input class="f14 ta-r" v-model.trim="commodity.address" placeholder="填写商品地址" style="display: block;width:100%;">
+                    </div>
+                </div>      
+                <div class="d-flex d-flex-center bottom-line f14" style="height: 5rem;">
+                    <div class="bold">购买链接</div>    
+                    <div class="flex">
+                        <input class="f14 ta-r" v-model.trim="commodity.link" placeholder="请以http://或https://为开头输入" style="display: block;width:100%;">
+                    </div>
+                </div>                               
+            </div>
+            <p class="ta-c f12" style="color:#888;padding:1.5rem 0;">*保存信息仅更改商品信息，请自行上架商品</p> 
+        </div>
+
+        <!--底部导航栏-->
+        <div class="fix-bl">
+            <div class="basewrap ta-c cfff f14" style="height: 5rem;line-height: 5rem;background:#0095FF;">保存信息</div>
+        </div>
+
+    </div>
+
+    <script src="https://j.vzan.cc/scripts/jquery2.1.4/jquery.min.js"></script>
+    <script src="https://j.vzan.cc/fcontent/script/swiper.min.js"></script>
+    <script src="https://j.vzan.cc/content/minisns/js/vue.min.js"></script> 
+    <script>
+        var vm = new Vue({
+            el:'#vue_me', 
+            data:{
+                add:true,
+                commodity:{
+                    title:'',
+                    content:'',
+                    price:'',
+                    tel:'',
+                    address:'',
+                    link:'',
+                    dynamicPics:[
+                        {img:''},
+                        {img:''},
+                    ]
+                }
+            },
+            methods:{
+                //价格
+                checkPrince:function(){
+                    this.commodity.price=''
+                },
+                //删除详情图
+                delDynamicPics:function(index){
+                    var self = this;
+                    this.commodity.dynamicPics.pop({img:''});
+                    if (this.commodity.dynamicPics.length >= 9) {
+                        this.add=false;
+                    } else {
+                        this.add=true;
+                    }
+                },
+                 //添加详情图
+                addDynamicPics:function(){
+                    var self = this;
+                    this.commodity.dynamicPics.push({img:''});
+            	    //如果已经9张了，isAddImg为false，隐藏加号
+                    if (this.commodity.dynamicPics.length >= 9) {
+                        this.add=false;
+                    } else {
+                        this.add=true;
+                    }
+                }
+
+            }, 
+            mounted:function(){
+            },
+            created: function(){
+            }  
+        })            
+
+    </script>    
+    
+</body>
+</head>
