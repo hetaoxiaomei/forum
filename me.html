@@ -200,24 +200,24 @@
 
         <!--底部导航-->
         <div class="fix-bl">
-            <ul class="basewrap d-flex newBottomNav">
-                <li class="flex">
+            <ul class="basewrap newBottomNav" style="display: flex;">
+                <li style="flex:1">
                     <i class="icon_index"></i>
                     <p>首页</p>
                 </li>
-                <li class="flex active">
+                <li class="active" style="flex:1">
                     <i class="icon_ranking"></i>
                     <p>排行榜</p>
                 </li>  
-                <li class="flex" @click="openNavDialog()">
+                <li @click="openNavDialog()" style="flex:1">
                     <i class="icon_post"></i>
                     <p style="color: #262626">发帖</p>
                 </li>   
-                <li class="flex">
+                <li style="flex:1">
                     <i class="icon_type"></i>
                     <p>版块</p>
                 </li>  
-                <li class="flex">
+                <li style="flex:1">
                     <i class="icon_me"></i>
                     <p>我的</p>
                 </li>                                                               
