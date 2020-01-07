@@ -141,51 +141,50 @@
             
         </div>
 
-        <!--底部导航栏-->
-        <footer class="fix-bl">
-            <div class="basewrap shadowTop">
-                <a href="" class="home active">
-                    <svg aria-hidden="true" class="footer-icon icon-home">
-                        <use xlink:href="../img/iconfont.svg#icon-home"></use>
-                    </svg>
-                    <svg aria-hidden="true" class="footer-icon icon-homeActive">
-                        <use xlink:href="../img/iconfont.svg#icon-homeActive"></use>
-                    </svg>
+        <!--底部导航-->
+        <div class="fix-bl" style="z-index: 999">
+            <ul class="basewrap newBottomNav" style="display: flex;">
+                <li style="flex:1">
+                    <i class="icon_index"></i>
                     <p>首页</p>
-                </a>
-                <a href="" class="recommand">
-                    <svg aria-hidden="true" class="footer-icon icon-recommand">
-                        <use xlink:href="../img/iconfont.svg#icon-recommand"></use>
-                    </svg>
-                    <svg aria-hidden="true" class="footer-icon icon-recommandActive">
-                        <use xlink:href="../img/iconfont.svg#icon-recommandActive"></use>
-                    </svg>
-                    <p>精选</p>
-                </a>
-                <a class="publish">
-                    <div class="footer-icon"></div>
-                    <p>发帖</p>
-                </a>
-                <a href="" class="action MsgAllRead">
-                    <svg aria-hidden="true" class="footer-icon icon-action">
-                        <use xlink:href="../img/iconfont.svg#icon-action"></use>
-                    </svg>
-                    <svg aria-hidden="true" class="footer-icon icon-actionActive">
-                        <use xlink:href="../img/iconfont.svg#icon-actionActive"></use>
-                    </svg>
-                    <p>动态<i class="dt_msgnum" style="display:none">0</i></p>
-                </a>
-                <a href="" class="mine">
-                    <svg aria-hidden="true" class="footer-icon icon-mine">
-                        <use xlink:href="../img/iconfont.svg#icon-mine"></use>
-                    </svg>
-                    <svg aria-hidden="true" class="footer-icon icon-mineActive">
-                        <use xlink:href="../img/iconfont.svg#icon-mineActive"></use>
-                    </svg>
+                </li>
+                <li class="active" style="flex:1">
+                    <i class="icon_ranking"></i>
+                    <p>排行榜</p>
+                </li>  
+                <li @click="openNavDialog()" style="flex:1">
+                    <i class="icon_post"></i>
+                    <p style="color: #262626">发帖</p>
+                </li>   
+                <li style="flex:1">
+                    <i class="icon_type"></i>
+                    <p>版块</p>
+                </li>  
+                <li style="flex:1">
+                    <i class="icon_me"></i>
                     <p>我的</p>
-                </a>
+                </li>                                                               
+            </ul>
+        </div>
+
+        <!--发帖弹框-->
+        <div class="fix-tl-100" v-show="navDialogSeen">
+            <div class="dialog-black-mask"></div>
+            <div class="fix-bl bg-f">
+                <div style="padding:30px 10% 0;display: flex;">
+                    <a class="ta-c" style="flex:1">
+                        <img src="img/nav03.png" style="width:55px;display:block;margin: 0 auto;">
+                        <p class="f11" style="margin: 10px 0 0;">发帖</p>
+                    </a>
+                    <a class="ta-c" style="flex:1">
+                        <img src="img/nav02.png" style="width:55px;display:block;margin: 0 auto;">
+                        <p class="f11" style="margin: 10px 0 0;">开通会员</p>
+                    </a>
+                </div>
+                <img @click="closeNavDialog()" src="img/nav04.png" style="width:32px;display:block;margin: 20px auto 100px;">
             </div>
-        </footer>
+        </div>
+
     </div>
     
     <script src="https://j.vzan.cc/scripts/jquery2.1.4/jquery.min.js"></script>
@@ -196,6 +195,7 @@
             el:'#vue_me', 
             data:{
                 selectIndex:0,
+                navDialogSeen:false,
                 navs:[
                     {item:'主页'},
                     {item:'橱窗'},
@@ -209,6 +209,12 @@
             methods:{
                 checkNav:function(index){
                     this.selectIndex=index
+                },
+                openNavDialog:function(){
+                    this.navDialogSeen=true
+                },
+                closeNavDialog:function(){
+                    this.navDialogSeen=false
                 }
             }, 
             mounted:function(){

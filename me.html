@@ -199,7 +199,7 @@
         </div>
 
         <!--底部导航-->
-        <div class="fix-bl">
+        <div class="fix-bl" style="z-index: 999">
             <ul class="basewrap newBottomNav" style="display: flex;">
                 <li style="flex:1">
                     <i class="icon_index"></i>
@@ -225,20 +225,20 @@
         </div>
 
         <!--发帖弹框-->
-        <div class="fix-tl-100" style="z-index: 3" v-show="navDialogSeen">
+        <div class="fix-tl-100" v-show="navDialogSeen">
             <div class="dialog-black-mask"></div>
             <div class="fix-bl bg-f">
-                <div style="padding:3rem 10% 0;display: flex;">
+                <div style="padding:30px 10% 0;display: flex;">
                     <a class="ta-c" style="flex:1">
-                        <img src="img/nav03.png" style="width:5.5rem;display:block;margin: 0 auto;">
-                        <p class="f11" style="margin: 1rem 0 0;">发帖</p>
+                        <img src="img/nav03.png" style="width:55px;display:block;margin: 0 auto;">
+                        <p class="f11" style="margin: 10px 0 0;">发帖</p>
                     </a>
                     <a class="ta-c" style="flex:1">
-                        <img src="img/nav02.png" style="width:5.5rem;display:block;margin: 0 auto;">
-                        <p class="f11" style="margin: 1rem 0 0;">开通会员</p>
+                        <img src="img/nav02.png" style="width:55px;display:block;margin: 0 auto;">
+                        <p class="f11" style="margin: 10px 0 0;">开通会员</p>
                     </a>
                 </div>
-                <img @click="closeNavDialog()" src="img/nav04.png" style="width:3.2rem;display:block;margin: 2rem auto 10rem;">
+                <img @click="closeNavDialog()" src="img/nav04.png" style="width:32px;display:block;margin: 20px auto 100px;">
             </div>
         </div>
 

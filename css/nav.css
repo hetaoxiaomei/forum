@@ -132,9 +132,14 @@ footer .active {color: #0096FF;}
 }
 
 /*新底部导航*/
+footer ul:before{
+    display: none
+}
+
 .newBottomNav{
     height:5rem;
     background: #fff;
+    padding: 0
 }
 
 .newBottomNav li i{
