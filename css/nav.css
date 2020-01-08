@@ -137,23 +137,23 @@ footer ul:before{
 }
 
 .newBottomNav{
-    height:5rem;
+    height:50px;
     background: #fff;
     padding: 0
 }
 
 .newBottomNav li i{
-    width: 2.4rem;
-    height: 2.4rem;
-    margin: .5rem auto .4rem;
+    width: 24px;
+    height: 24px;
+    margin: 5px auto 4px;
     display: block;
     background-image: url(../img/nav01.png);
-    background-size: 50rem
+    background-size: 500px;
 }
 
 .newBottomNav li p{
     color: #B2B9C9;
-    font-size: 1.1rem;
+    font-size:11px;
     text-align: center;
 }
 
@@ -164,55 +164,55 @@ footer ul:before{
 }
 
 .newBottomNav li.active .icon_index{
-    background-position: 0 -2.6rem;
+    background-position: 0 -26px;
 }
 
 .newBottomNav li .icon_ranking{
-    background-position: -13rem 0;
+    background-position: -130px 0;
 }
 
 .newBottomNav li .icon_post{
-    width: 5.5rem;
-    height:4.2rem;
-    background-position:-15.7rem -.1rem;
-    margin:-2.1rem auto 0;
+    width: 55px;
+    height:42px;
+    background-position:-157px -1px;
+    margin:-21px auto 0;
     border:6px solid #fff;
-    border-radius: 4.2rem;
+    border-radius: 42px;
 }
 
 .newBottomNav li.active .icon_ranking{
-    background-position: -13rem -2.6rem;
+    background-position: -130px -26px;
 }
 
 .newBottomNav li .icon_type{
-    background-position: -10.4rem 0;
+    background-position: -104px 0;
 }
 
 .newBottomNav li.active .icon_type{
-    background-position: -10.4rem -2.6rem;
+    background-position: -104px -26px;
 }
 
 .newBottomNav li .icon_me{
-    background-position: -7.8rem 0;
+    background-position: -78px 0;
 }
 
 .newBottomNav li.active .icon_me{
-    background-position: -7.8rem -2.6rem;
+    background-position: -78px -26px;
 }
 
 .newBottomNav li .icon_dynamic{
-    background-position: -5.2rem 0;
+    background-position: -52px 0;
 }
 
 .newBottomNav li.active .icon_dynamic{
-    background-position: -5.2rem -2.6rem;
+    background-position: -52px -26px;
 }
 
 .newBottomNav li .icon_114{
-    background-position: -2.6rem 0;
+    background-position: -26px 0;
 }
 
 .newBottomNav li.active .icon_114{
-    background-position: -2.6rem -2.6rem;
+    background-position: -26px -26px;
 }
 
