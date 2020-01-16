@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="x5-page-mode" content="app">
+    <title>编辑名片</title>
+    <link rel="stylesheet" href="https://j.vzan.cc/content/bbs/css/common.css">
+    <link rel="stylesheet" type="text/css" href="../../css/nav.css">
+    <style>
+        [v-cloak]{display: none}
+        .select-radio.active{border: none;background-position:-15.2rem -5.1rem; background-image: url(../../img/post-pic02.png);background-size: 50rem;background-repeat: no-repeat;}
+        input::-webkit-input-placeholder {color: #BBBBBB;}
+        input::placeholder{color: #BBBBBB;}
+        textarea::placeholder {color: #BBBBBB;}
+        .select-radio{box-sizing: border-box;vertical-align: -.1rem;width: 1.2rem;height: 1.2rem;border-radius: .2rem;border: 1px solid #888;display: inline-block;margin: 0 .5rem 0 0;}
+        .pic-ul {overflow: hidden;padding:1rem 0;}
+        .pic-ul li {width: 75px;height: 75px;margin-right: 10px;margin-bottom: 0.8rem;float: left;position: relative;overflow: hidden;border-radius: 4px;}
+        .pic-ul li img {width: 100%;height: 100%;display: block;}
+        .pic-ul li .close {width: 16px;height: 16px;position: absolute;top: 0;right: 0;}
+        .bottom-line:after {border-bottom: 1px solid #eeeeee;}
+    </style>
+<body>
+    <div id="vue_me" v-cloak>
+        <div class="fix-tl">
+            <div class="top-nav bottom-line">
+                <a class="left"><i class="arrow"></i></a>
+                <div class="center bold">编辑名片</div> 
+                <a class="right"></a>
+            </div>
+        </div>
+        <div class="basewrap bz" style="padding:5rem 1.5rem 8rem ">
+            <div class="bg-f" style="padding:0 1rem;">  
+                <div style="padding:1.5rem 0 0;">
+                    <img style="background: #E1E2E6;width: 7.5rem;height: 7.5rem;border-radius: 50%;display: block;margin:0 auto;">
+                    <p class="f15 ta-c" style="color: #888;margin: 1rem 0;">上传头像</p>
+                </div>
+
+                <div class="bottom-line f14">
+                    <div class="f12" style="color: #888;padding: 1.5rem 0 0;">*姓名</div>
+                    <input class="f14" v-model.trim="commodity.title" placeholder="请输入商品标题，限30字" style="display: block;width:100%;padding: 1.5rem 0 2rem;">
+                </div>
+
+                <div class="bottom-line f14">
+                    <div class="f12" style="color: #888;padding: 1.5rem 0 0;">*联系方式</div>
+                    <input class="f14" v-model.trim="commodity.title" placeholder="请填写手机或座机号码" style="display: block;width:100%;padding: 1.5rem 0 2rem;">
+                </div>
+
+                <div class="bottom-line f14" style="padding: 0 0 2rem">
+                    <div class="f12" style="color: #888;padding: 1.5rem 0 0;">*认证资料</div>
+                    <img class="pic" src="../../img/ranking33.png" style="width: 75px;height: 75px;margin:1.5rem 0;position: relative;overflow: hidden;border-radius: 4px;">
+                    <p class="f11" style="color:#0096FF;background: rgba(0,150,255,.1);padding:.6rem 1rem;border-radius:1.3rem;line-height: 1.3">请上传清晰的名片或营业执照或门店照片。仅做审核使用</p>
+                </div>
+            </div>   
+
+            <div class="bg-f" style="padding:0 1rem;margin:.5rem 0 0;">  
+                <div class="bottom-line f14">
+                    <div class="f12" style="color: #888;padding: 1.5rem 0 0;">微信号</div>
+                    <input class="f14" v-model.trim="commodity.title" placeholder="请填写微信号" style="display: block;width:100%;padding: 1.5rem 0 2rem;">
+                </div>
+
+                <div class="bottom-line f14">
+                    <div class="f12" style="color: #888;padding: 1.5rem 0 0;">公司</div>
+                    <input class="f14" v-model.trim="commodity.title" placeholder="请填写公司具体名称" style="display: block;width:100%;padding: 1.5rem 0 2rem;">
+                </div>
+
+                <div class="bottom-line f14">
+                    <div class="f12" style="color: #888;padding: 1.5rem 0 0;">职务</div>
+                    <input class="f14" v-model.trim="commodity.title" placeholder="请填写职位具体名称" style="display: block;width:100%;padding: 1.5rem 0 2rem;">
+                </div>   
+                <div class="bottom-line f14">
+                    <div class="f12" style="color: #888;padding: 1.5rem 0 0;">认证地址</div>
+                    <input class="f14" v-model.trim="commodity.title" placeholder="请填写门店或者办公地址" style="display: block;width:100%;padding: 1.5rem 0 2rem;">
+                </div>                  
+                
+            </div>              
+
+        </div>
+
+        <!--底部导航栏-->
+        <div class="fix-bl">
+            <div class="basewrap ta-c cfff f14" style="height: 5rem;line-height: 5rem;background:#0095FF;">保存信息</div>
+        </div>
+
+    </div>
+
+    <script src="https://j.vzan.cc/scripts/jquery2.1.4/jquery.min.js"></script>
+    <script src="https://j.vzan.cc/fcontent/script/swiper.min.js"></script>
+    <script src="https://j.vzan.cc/content/minisns/js/vue.min.js"></script> 
+    <script>
+        var vm = new Vue({
+            el:'#vue_me', 
+            data:{
+                add:true,
+                commodity:{
+                    title:'',
+                    content:'',
+                    price:'',
+                    tel:'',
+                    address:'',
+                    link:'',
+                    dynamicPics:[
+                        {img:''},
+                        {img:''},
+                    ]
+                }
+            },
+            methods:{
+                //价格
+                checkPrince:function(){
+                    this.commodity.price=''
+                },
+                //删除详情图
+                delDynamicPics:function(index){
+                    var self = this;
+                    this.commodity.dynamicPics.pop({img:''});
+                    if (this.commodity.dynamicPics.length >= 9) {
+                        this.add=false;
+                    } else {
+                        this.add=true;
+                    }
+                },
+                 //添加详情图
+                addDynamicPics:function(){
+                    var self = this;
+                    this.commodity.dynamicPics.push({img:''});
+            	    //如果已经9张了，isAddImg为false，隐藏加号
+                    if (this.commodity.dynamicPics.length >= 9) {
+                        this.add=false;
+                    } else {
+                        this.add=true;
+                    }
+                }
+
+            }, 
+            mounted:function(){
+            },
+            created: function(){
+            }  
+        })            
+
+    </script>    
+    
+</body>
+</head>

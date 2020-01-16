@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="x5-page-mode" content="app">
+    <title>我的名片夹</title>
+    <link rel="stylesheet" href="https://j.vzan.cc/zhibo/livecontent/content/weui/weui.min.css?v=636266498732168647">
+    <link rel="stylesheet" href="https://j.vzan.cc/content/bbs/css/common.css">
+    <link rel="stylesheet" type="text/css" href="../../css/nav.css">
+    <style>
+        [v-cloak]{display: none}
+        .icon02{background-image: url(../img/card02.png);background-size:50rem;background-repeat:no-repeat;}
+        .weui_switch:checked{border-color: #10D576;background-color: #10D576;}
+        .delete-bt{height:2.3rem;line-height: 2.3rem;background:#FFDADA;color:#FF4343;border-radius: 1.2rem;padding: 0 1rem;}
+        .business-card .icon-title{vertical-align: -.4rem; margin: 0 .5rem 0 0; width:1.6rem;height: 1.6rem;display:inline-block;}
+        .business-card .icon-tel{width: 1.1rem;height: 1.1rem;margin: .1rem .8rem 0 0;}
+        .edit-bt{margin:0 1rem 0 0;height: 2.7rem;padding:0 1.2rem;background:#E5F4FF;line-height:2.7rem;border-radius:1.4rem;color:#0096FF;}
+        .qrImg{width: 4.4rem;height:4.4rem;border:3px solid #fff;border-radius:5px;position:absolute;bottom: 1.4rem;right: 1.5rem;}
+    </style>
+</head>
+<body>
+    <div id="vue_card" v-cloak>
+        <div id="topNav" class="fix-tl">
+            <div class="top-nav bottom-line">
+                <a class="left">
+                    <i class="arrow"></i>
+                </a>
+                <div class="center">派大鑫主页</div>
+                <a class="right"></a>
+            </div>
+        </div>
+        <div class="basewrap">
+            <div class="bg-f" style="margin: 5rem 1.5rem 0;padding:1rem 1rem 0;">
+                <div class="f12 ta-c bold fr delete-bt">删除我的名片</div>
+                <!--名片-->
+                <div class="business-card" style="margin: 2.7rem 0 0;"> 
+                    <img src="../img/card01.png" style="width:7.2rem;height:1.5rem;margin:0 0 0 1.8rem;display: block;">
+                    <div class="rel bold cfff" style="min-height: 10.5rem;background:#0096ff;border-radius: 20px;padding:0 1.5rem 1.5rem 1.8rem;line-height: 1.3;">
+                        <img :src="myCard.img" style="box-shadow: -4px -4px 10px rgba(0,111,204,.2);width:6.6rem;height:6.6rem;display: block;border-radius: 5px;position: absolute;top:-1.5rem;left: 1.8rem;">
+                        <div class="bz" style="padding: .8rem 0 0 8rem;line-height: 1.3;height: 5.1rem;">
+                            <div class="f14 bold">{{myCard.name}}</div>
+                            <div class="f14 bold clamp1" style="margin: .5rem 0 0;">
+                                <i class="icon02 icon-title"></i>{{myCard.title}}
+                            </div>
+                        </div>
+                        <div style="padding:0 5.5rem 0 0;">
+                            <div class="d-flex f12" style="margin: 1.5rem 0 0;">
+                                <div class="icon02 icon-tel" style="background-position: 0 -1.8rem;"></div>
+                                <div class="flex">{{myCard.tel}}</div>
+                            </div>
+                            <div class="d-flex f12" style="margin: 1.5rem 0 0;" v-show="myCard.authentication.length>0">
+                                <div class="icon02 icon-tel" style="background-position: 0 -3.1rem;"></div>
+                                <div class="flex">{{myCard.authentication}}</div>
+                            </div>     
+                            <div class="d-flex f12" style="margin: 1.5rem 0 0;" v-show="myCard.wechat.length>0">
+                                <div class="icon02 icon-tel" style="background-position: 0 -4.4rem;"></div>
+                                <div class="flex">{{myCard.wechat}}</div>
+                            </div>      
+                            <div class="d-flex f12" style="margin: 1.5rem 0 0;" v-show="myCard.company.length>0">
+                                <div class="icon02 icon-tel" style="background-position: 0 -5.7rem;"></div>
+                                <div class="flex">{{myCard.company}}</div>
+                            </div>   
+                            <div class="d-flex f12" style="margin: 1.5rem 0 0;" v-show="myCard.job.length>0">
+                                <div class="icon02 icon-tel" style="background-position: 0 -7rem;"></div>
+                                <div class="flex">{{myCard.job}}</div>
+                            </div>  
+                            <div class="d-flex f12" style="margin: 1.5rem 0 0;" v-show="myCard.address.length>0">
+                                <div class="icon02 icon-tel" style="background-position: 0 -8.2rem;"></div>
+                                <div class="flex">{{myCard.address}}</div>
+                            </div>
+                        </div>
+                        <!--二维码--> 
+                        <img :src="myCard.qr" class="qrImg">                                                                                             
+                    </div>
+                </div>
+                <div class="d-flex f12" style="margin: 1.5rem 0 0;">
+                    <a class="edit-bt">
+                        <i class="icon02" style="width: 1rem;height:1rem;display:inline-block;margin: 0 .5rem 0 0;vertical-align: -.1rem;background-position:-3.5rem 0;"></i>编辑名片
+                    </a>
+                    <a class="edit-bt">
+                        <i class="icon02" style="width: 1.1rem;height:1rem;display:inline-block;margin: 0 .5rem 0 0;vertical-align: -.1rem;background-position:-5.8rem 0;"></i>分享名片
+                    </a>
+                    <div class="f12 flex ta-r" style="color: #888;line-height: 2.7rem;">{{myCard.outdate}}</div>
+                </div>
+
+                <div style="margin: 1rem 0 0;">
+                    <div class="d-flex d-flex-center bottom-line" style="padding: 1rem 0;">
+                        <div class="f14 bold flex">名片上用****隐藏电话联系方式</div>
+                        <div class="div-checkbox">
+                            <div class="a_right div-check">
+                                <span class="li_right">
+                                    <span class="weui_cell_ft">
+                                        <input class="weui_switch" id="chkHideContact"  type="checkbox" checked v-model="checkedTel" @click="checkTel()">
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex d-flex-center bottom-line" style="padding: 1rem 0;">
+                        <div class="f14 bold flex">开启一键拨号</div>
+                        <div class="div-checkbox">
+                            <div class="a_right div-check">
+                                <span class="li_right">
+                                    <span class="weui_cell_ft">
+                                        <input class="weui_switch" id="chkHideContact"  type="checkbox" v-model="checkedCall" @click="checkCall()">
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex d-flex-center bottom-line" style="padding: 1rem 0;">
+                        <div class="f14 bold flex">开启一键微信</div>
+                        <div class="div-checkbox">
+                            <div class="a_right div-check">
+                                <span class="li_right">
+                                    <span class="weui_cell_ft">
+                                        <input class="weui_switch" id="chkHideContact"  type="checkbox" checked v-model="checkedChat" @click="checkChat()">
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--收藏名片-->
+            <div class="bg-f" style="margin: .5rem 1.5rem 1rem;padding:1rem;">
+                <div class="f14 bold" style="padding: 0 0 1.5rem"><i style="display: inline-block;height:1.3rem;width:.2rem;background: #0084FF;margin: 0 .4rem 0 0;vertical-align: -.2rem;"></i>收藏的名片</div>
+                <!--名片-->
+                <div class="business-card" style="margin:0 0 1rem;" v-for="myCard,index in saveCard">
+                    <div class="rel bold" style="color: #0095FF;background:#C9E9FF;border-radius: 20px;padding:1.5rem 1.5rem 1.5rem 1.8rem;line-height: 1.3;">
+                        <div class="icon02" style="position: absolute;top:0;right: 3rem; width: 2.6rem;height: 2.5rem;display: block;background-position: -2.6rem -1.8rem;"></div>
+                        <div class="d-flex d-flex-center" style="line-height: 1.3;">
+                            <img :src="myCard.img" style="width:5.5rem;height:5.5rem;display: block;border-radius: 5px;margin: 0 1.5rem 0 0;">
+                            <div class="flex">
+                                <div class="f14 bold" style="width: 70%">{{myCard.name}}</div>
+                                <div class="f13 bold clamp1" style="margin: .8rem 0 0;">
+                                    <i class="icon02 icon-title"></i>{{myCard.title}}
+                                </div>
+                            </div> 
+                            <div class="icon02 card-spread" :style="{transform:(myCard.turnStyle?'rotate(-90deg)':'')}" @click="turn(index)" style="width: 1.8rem;height:1.8rem;margin-right:-.6rem;background-position:-9.8rem 0;"></div>
+                        </div>
+                        <div style="padding:0 5.5rem 0 0;" v-show="myCard.turnStyle">
+                            <div class="d-flex f12" style="margin: 1.5rem 0 0;">
+                                <div class="icon02 icon-tel" style="background-position: -1.3rem -1.8rem;"></div>
+                                <div class="flex">{{myCard.tel}}</div>
+                            </div>
+                            <div class="d-flex f12" style="margin: 1.5rem 0 0;" v-show="myCard.authentication.length>0">
+                                <div class="icon02 icon-tel" style="background-position:-1.3rem -3.1rem;"></div>
+                                <div class="flex">{{myCard.authentication}}</div>
+                            </div>     
+                            <div class="d-flex f12" style="margin: 1.5rem 0 0;" v-show="myCard.wechat.length>0">
+                                <div class="icon02 icon-tel" style="background-position: -1.3rem -4.4rem;"></div>
+                                <div class="flex">{{myCard.wechat}}</div>
+                            </div>      
+                            <div class="d-flex f12" style="margin: 1.5rem 0 0;" v-show="myCard.company.length>0">
+                                <div class="icon02 icon-tel" style="background-position: -1.3rem -5.7rem;"></div>
+                                <div class="flex">{{myCard.company}}</div>
+                            </div>   
+                            <div class="d-flex f12" style="margin: 1.5rem 0 0;" v-show="myCard.job.length>0">
+                                <div class="icon02 icon-tel" style="background-position: -1.3rem -7rem;"></div>
+                                <div class="flex">{{myCard.job}}</div>
+                            </div>  
+                            <div class="d-flex f12" style="margin: 1.5rem 0 0;" v-show="myCard.address.length>0">
+                                <div class="icon02 icon-tel" style="background-position:-1.3rem -8.2rem;"></div>
+                                <div class="flex">{{myCard.address}}</div>
+                            </div>
+                        </div>
+                        <!--二维码--> 
+                        <img :src="myCard.qr" class="qrImg" v-show="myCard.turnStyle">                                                                                              
+                    </div>
+                    <div class="d-flex f12" style="margin: 1rem 0 2rem;" v-show="myCard.turnStyle">
+                        <a class="edit-bt">
+                            <i class="icon02" style="width: .8rem;height:1rem;display:inline-block;margin: 0 .5rem 0 0;vertical-align: -.1rem;background-position:-4.7rem 0;"></i>查看TA的主页
+                        </a>
+                        <a class="edit-bt">
+                            <i class="icon02" style="width: 1.1rem;height:1rem;display:inline-block;margin: 0 .5rem 0 0;vertical-align: -.1rem;background-position:-5.8rem 0;"></i>分享名片
+                        </a>
+                        <div class="ta-r flex" style="line-height:2.7rem;color: #FFB41B;">
+                            <i class="icon02" style="display:inline-block;width:1.4rem;height: 1.4rem;margin: 0 .4rem 0 0;background-position: -8.2rem 0;vertical-align: -.3rem;"></i>已收藏
+                        </div>
+                    </div> 
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://j.vzan.cc/scripts/jquery2.1.4/jquery.min.js"></script>
+    <script src="https://j.vzan.cc/content/minisns/js/vue.min.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#vue_card', 
+            data:{
+                checkedTel:true,
+                checkedCall:false,
+                checkedChat:true,
+                myCard:{
+                    img:' https://i2.vzan.cc/image/jpg/2019/8/24/213905a5219c2074e14388b744bec842bfe92d.jpg',
+                    name:'派大鑫',
+                    title:'锦州市毛笔协会荣誉主席',
+                    tel:'18819562345',
+                    authentication:'',
+                    wechat:'',
+                    company:'',
+                    job:'',
+                    address:'',
+                    qr:'',
+                    outdate:'2016-06-26过期'
+                },
+                saveCard:[
+                    {
+                        turnStyle:false,
+                        img:' https://i2.vzan.cc/image/jpg/2019/8/24/213905a5219c2074e14388b744bec842bfe92d.jpg',
+                        name:'派大鑫',
+                        title:'锦州市毛笔协会荣誉主席',
+                        tel:'18819562345',
+                        authentication:'美宜佳怀远县代理人',
+                        wechat:'sun_5252445',
+                        company:'广州市怀远县农机实业有限公司',
+                        job:'产品经理',
+                        address:'怀远县机场北路358号',
+                        qr:''
+                    },
+                    {
+                        turnStyle:false,
+                        img:' https://i2.vzan.cc/image/jpg/2019/8/24/213905a5219c2074e14388b744bec842bfe92d.jpg',
+                        name:'派大鑫',
+                        title:'锦州市毛笔协会荣誉主席',
+                        tel:'18819562345',
+                        authentication:'',
+                        wechat:'sun_5252445',
+                        company:'广州市怀远县农机实业有限公司',
+                        job:'产品经理',
+                        address:'',
+                        qr:''
+                    }
+                ]
+            },
+            methods:{
+                turn:function(index){
+                    this.saveCard[index].turnStyle=!this.saveCard[index].turnStyle
+                },
+                checkTel:function(){
+                    this.checkedTel=!this.checkedTel;
+                },
+                checkCall:function(){
+                    this.checkedCall=!this.checkedCall;
+                },
+                checkChat:function(){
+                    this.checkedChat=!this.checkedChat;
+                }
+
+            }, 
+            mounted:function(){
+                $('.card-spread').on('click',function(){ 
+                    $('html,body').animate({ scrollTop:400},200)
+                });
+            },
+            created: function(){
+            }  
+        })            
+
+    </script>    
+    
+
+</body>
+</html>
